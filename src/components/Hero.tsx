@@ -142,7 +142,7 @@ export const Hero: React.FC = () => {
           {/* Right Column: Exactly One Visual Placeholder */}
           <div style={{ gridColumn: 'span 12' }} className="hero-visual-col">
             <ProjectVisualPlaceholder
-              imageSrc="/pics/codju.com.png"
+              imageSrc="./pics/codju.com.png"
               label="PRODUCTION PLATFORM"
               projectName="Codju Web & Digital Ecosystem"
               optionalNote="codju.com production release"

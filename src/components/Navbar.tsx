@@ -77,7 +77,7 @@ export const Navbar: React.FC = () => {
             }}
           >
             <img
-              src="/pics/bhavishya-profile.png"
+              src="./pics/bhavishya-profile.png"
               alt="Bhavishya Singla"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               onError={(e) => {

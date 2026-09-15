@@ -32,7 +32,7 @@ export const BeyondTheScreen: React.FC = () => {
           {/* Left Column: Authentic Bhavishya Singla Portrait Placeholder */}
           <div style={{ gridColumn: 'span 12' }} className="bts-photo-col">
             <PersonalPhotoPlaceholder
-              imageSrc="/pics/bhavishya-profile.png"
+              imageSrc="./pics/bhavishya-profile.png"
               label="BHAVISHYA SINGLA"
               sublabel="Growth & Systems Intern • Codju Technologies"
               aspectRatio="4/5"

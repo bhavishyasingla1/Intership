@@ -33,7 +33,7 @@ const flagshipData: FlagshipDefinition[] = [
     status: 'DELIVERED',
     isInternal: false,
     liveUrl: 'https://codju.com',
-    imageSrc: '/pics/codju.com.png',
+    imageSrc: './pics/codju.com.png',
     problem: 'As Codju expanded AICT curriculums and sample books, the website needed a clear architectural structure to present products to school leadership while establishing institutional credibility.',
     whatIDid: [
       'Restructured website architecture into clean product pillars: Products, Books, Platform, and Training.',
@@ -58,7 +58,7 @@ const flagshipData: FlagshipDefinition[] = [
     status: 'BUILT',
     isInternal: true,
     liveUrl: 'https://whatsapp-dashboard.codju-tech25.workers.dev/',
-    imageSrc: '/pics/whatsapp.png',
+    imageSrc: './pics/whatsapp.png',
     problem: 'Managing outbound school outreach through scattered spreadsheets and individual devices caused fragmented tracking and lacked audience segmentation.',
     whatIDid: [
       'Architected an internal operations interface for contact list organization and tag-based audience segmentation.',
@@ -82,7 +82,7 @@ const flagshipData: FlagshipDefinition[] = [
     status: 'BUILT',
     isInternal: true,
     liveUrl: 'https://codju-content.bhavishyasingla2005.workers.dev/',
-    imageSrc: '/pics/content.png',
+    imageSrc: './pics/content.png',
     problem: 'Balancing social posts, educational newsletters, and SEO blog articles across multiple platforms without a single source of truth created review delays and irregular publishing rhythms.',
     whatIDid: [
       'Designed a unified content production pipeline across four stages: Planning → Draft → Ready → Published.',
@@ -106,7 +106,7 @@ const flagshipData: FlagshipDefinition[] = [
     status: 'LAUNCHED',
     isInternal: false,
     liveUrl: 'https://teachboost.in',
-    imageSrc: '/pics/teachboost.png',
+    imageSrc: './pics/teachboost.png',
     problem: 'Educators attending Codju professional development workshops required a dedicated platform to discover module schedules, access pedagogy resources, and verify training credentials.',
     whatIDid: [
       'Built responsive, accessible front-end interfaces for workshop registration and curriculum discovery.',
@@ -130,7 +130,7 @@ const flagshipData: FlagshipDefinition[] = [
     status: 'DELIVERED',
     isInternal: false,
     liveUrl: 'https://summercamp.codju.com',
-    imageSrc: '/pics/summer camp.png',
+    imageSrc: './pics/summer camp.png',
     problem: 'Seasonal campaigns like summer camps and specialized workshops require distinct messaging, urgency, and pricing transparency that would clutter the primary institutional homepage.',
     whatIDid: [
       'Engineered standalone conversion architecture for Codju Summer Camp at summercamp.codju.com.',
@@ -154,7 +154,7 @@ const flagshipData: FlagshipDefinition[] = [
     status: 'IMPLEMENTED',
     isInternal: false,
     liveUrl: 'https://codju.com/blog',
-    imageSrc: '/pics/blogs.png',
+    imageSrc: './pics/blogs.png',
     problem: 'Early Search Console audits revealed that nearly all organic impressions came from branded queries ("Codju"). High-intent searches for educational computer science curricula had minimal visibility.',
     whatIDid: [
       'AUDIT: Audited Search Console queries, identifying heavy branded search saturation and topic opportunities.',
@@ -975,7 +975,7 @@ export const FlagshipProjects: React.FC = () => {
               ) : activeProject.id === 'campaign-landing' ? (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <ProjectVisualPlaceholder
-                    imageSrc={campaignVisual === 'summer-camp' ? '/pics/summer camp.png' : '/pics/ct-ai.png'}
+                    imageSrc={campaignVisual === 'summer-camp' ? './pics/summer camp.png' : './pics/ct-ai.png'}
                     projectName={campaignVisual === 'summer-camp' ? 'Codju Summer Camp Landing Page' : 'Computational Thinking Landing Experience'}
                     label="CAMPAIGN VISUAL EVIDENCE"
                     optionalNote={campaignVisual === 'summer-camp' ? 'summercamp.codju.com capture' : 'codju.com/computational-thinking capture'}
