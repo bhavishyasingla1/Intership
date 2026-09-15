@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, X, ZoomIn } from 'lucide-react';
+import { X, ZoomIn } from 'lucide-react';
 import { PersonalPhotoPlaceholder, TeamPhotoPlaceholder } from './ProjectVisualPlaceholder';
 
 export const BeyondTheScreen: React.FC = () => {
@@ -26,15 +26,15 @@ export const BeyondTheScreen: React.FC = () => {
     <section id="about" className="section" style={{ backgroundColor: '#ffffff', borderTop: '1px solid var(--border-subtle)' }}>
       <div className="container">
         {/* Section Header */}
-        <div className="section-header" style={{ maxWidth: '680px' }}>
-          <div className="section-eyebrow">
-            THE HUMAN EXPERIENCE
+        <div className="section-header" style={{ maxWidth: '720px', margin: '0 auto 44px auto', textAlign: 'center' }}>
+          <div className="section-eyebrow" style={{ margin: '0 auto 12px auto' }}>
+            REFLECTIONS
           </div>
           <h2 className="section-title">
             Beyond the screen.
           </h2>
-          <p className="section-subtitle">
-            Reflections from nine months of collaborating, taking initiative, and learning in an early-stage environment.
+          <p className="section-subtitle" style={{ margin: '0 auto' }}>
+            Key takeaways from collaborating, taking initiative, and shipping in an early-stage startup.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export const BeyondTheScreen: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Exactly 3 Concise Grounded Reflections (Document 12 Section 50) */}
+          {/* Right Column: Exactly 3 Concise Grounded Reflections */}
           <div style={{ gridColumn: 'span 12' }} className="bts-text-col">
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Reflection 1 */}
@@ -82,10 +82,10 @@ export const BeyondTheScreen: React.FC = () => {
                   PERSPECTIVE
                 </div>
                 <h3 style={{ fontSize: '16px', fontWeight: 750, color: 'var(--text-primary)', marginBottom: '6px' }}>
-                  Learning how a startup actually operates
+                  Startup Operations
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
-                  Working in an early-stage company meant seeing how strategy, execution and iteration connect across everyday priorities.
+                  Seeing how strategy, execution, and fast iteration connect across daily priorities in an early-stage company.
                 </p>
               </div>
 
@@ -101,10 +101,10 @@ export const BeyondTheScreen: React.FC = () => {
                   INITIATIVE
                 </div>
                 <h3 style={{ fontSize: '16px', fontWeight: 750, color: 'var(--text-primary)', marginBottom: '6px' }}>
-                  Proactive initiative
+                  Proactive Problem-Solving
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
-                  Many projects began with identifying a gap, proposing an approach and building a first version to solve operational friction.
+                  Spotting operational friction, proposing structured solutions, and building initial versions before being asked.
                 </p>
               </div>
 
@@ -120,10 +120,10 @@ export const BeyondTheScreen: React.FC = () => {
                   COLLABORATION
                 </div>
                 <h3 style={{ fontSize: '16px', fontWeight: 750, color: 'var(--text-primary)', marginBottom: '6px' }}>
-                  Learning through people
+                  Mentorship & Feedback
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
-                  Regular feedback from mentors and the Codju team helped me improve the work and think more clearly about unfamiliar problems.
+                  Refining technical and design decisions through regular critique and collaboration with mentors and teammates.
                 </p>
               </div>
             </div>
@@ -134,7 +134,7 @@ export const BeyondTheScreen: React.FC = () => {
         <div style={{ marginBottom: '32px' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
             <div style={{ fontSize: '11px', fontWeight: 750, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              TEAM & WORKING MOMENTS
+              TEAM & MOMENTS
             </div>
             <div style={{ fontSize: '11.5px', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
               <ZoomIn size={12} /> Click photo to expand
@@ -175,9 +175,11 @@ export const BeyondTheScreen: React.FC = () => {
           </div>
         </div>
 
-        {/* Mentor Acknowledgement (Document 12 Section 44, 45, 97) */}
+        {/* Team Acknowledgement */}
         <div
           style={{
+            maxWidth: '820px',
+            margin: '0 auto',
             backgroundColor: '#f8fafc',
             border: '1px solid var(--border-subtle)',
             borderRadius: 'var(--radius-md)',
@@ -185,45 +187,15 @@ export const BeyondTheScreen: React.FC = () => {
             fontSize: '13.5px',
             color: 'var(--text-secondary)',
             lineHeight: 1.6,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '16px'
+            textAlign: 'center'
           }}
         >
-          <div style={{ maxWidth: '640px' }}>
-            <div style={{ fontWeight: 700, color: 'var(--text-primary)', marginBottom: '4px' }}>
-              Built with guidance, feedback and collaboration from{' '}
-              <a
-                href="https://www.linkedin.com/in/nitishcodju/?skipRedirect=true"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: 'var(--brand-primary)',
-                  fontWeight: 750,
-                  textDecoration: 'none',
-                  borderBottom: '1px solid rgba(100, 22, 184, 0.3)'
-                }}
-              >
-                Nitish
-              </a>{' '}
-              and the Codju team throughout the internship.
-            </div>
-            <div>
-              Grateful to everyone who reviewed the work, challenged my thinking and helped me improve it.
-            </div>
+          <div style={{ fontWeight: 700, color: 'var(--text-primary)', marginBottom: '4px' }}>
+            Built with guidance, feedback, and collaboration from the Codju team and mentors throughout the internship.
           </div>
-          <a
-            href="https://www.linkedin.com/in/nitishcodju/?skipRedirect=true"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-sm btn-secondary"
-            style={{ gap: '6px' }}
-          >
-            <span>NITISH'S LINKEDIN</span>
-            <ExternalLink size={12} />
-          </a>
+          <div>
+            Grateful to everyone who reviewed the work, challenged my thinking, and helped me improve it.
+          </div>
         </div>
       </div>
 

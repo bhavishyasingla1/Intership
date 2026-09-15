@@ -2,12 +2,12 @@ import React from 'react';
 
 export const TimelineToProjectsTransition: React.FC = () => {
   const spineStages = [
-    'Presence',
-    'Discovery',
-    'Web',
-    'Systems',
-    'Measurement',
-    'Experimentation'
+    'Brand Presence',
+    'Search Discovery',
+    'Web Platforms',
+    'Internal Systems',
+    'Analytics Tracking',
+    'AI Automation'
   ];
 
   return (
@@ -45,18 +45,18 @@ export const TimelineToProjectsTransition: React.FC = () => {
             marginBottom: '8px'
           }}
         >
-          The work started with visibility.
+          From visibility to infrastructure.
         </h3>
         <p
           style={{
-            fontSize: 'clamp(17px, 2vw, 20px)',
+            fontSize: 'clamp(16px, 1.8vw, 19px)',
             color: 'var(--brand-primary)',
             fontWeight: 700,
             lineHeight: 1.4,
             margin: '0 auto 28px auto'
           }}
         >
-          Then I started building what sat underneath it.
+          Building the platforms and automated systems behind the brand.
         </p>
 
         {/* Quiet Progression Spine */}

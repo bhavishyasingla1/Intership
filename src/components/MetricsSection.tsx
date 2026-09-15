@@ -86,15 +86,15 @@ export const MetricsSection: React.FC = () => {
     <section id="numbers" className="section" style={{ backgroundColor: '#ffffff', borderTop: '1px solid var(--border-subtle)' }}>
       <div className="container">
         {/* Section Header */}
-        <div className="section-header" style={{ maxWidth: '680px' }}>
-          <div className="section-eyebrow">
-            VERIFIED EVIDENCE
+        <div className="section-header" style={{ maxWidth: '720px', margin: '0 auto 44px auto', textAlign: 'center' }}>
+          <div className="section-eyebrow" style={{ margin: '0 auto 12px auto' }}>
+            KEY METRICS
           </div>
           <h2 className="section-title">
-            What the data shows.
+            Audited data & results.
           </h2>
-          <p className="section-subtitle">
-            Audited platform snapshots from verified channels for documented periods.
+          <p className="section-subtitle" style={{ margin: '0 auto' }}>
+            Audited performance snapshots from verified platforms across documented periods.
           </p>
         </div>
 
@@ -275,22 +275,26 @@ export const MetricsSection: React.FC = () => {
         {/* Audit Documentation Note */}
         <div
           style={{
+            maxWidth: '820px',
+            margin: '0 auto',
             backgroundColor: '#f8fafc',
             border: '1px solid var(--border-subtle)',
             borderRadius: 'var(--radius-lg)',
             padding: '16px 20px',
             display: 'flex',
             alignItems: 'center',
+            justifyContent: 'center',
             gap: '12px',
-            fontSize: '12.5px',
+            fontSize: '13px',
             color: 'var(--text-secondary)',
-            lineHeight: 1.5
+            lineHeight: 1.5,
+            textAlign: 'center'
           }}
         >
           <ShieldCheck size={18} color="var(--brand-accent)" style={{ flexShrink: 0 }} />
           <div>
             <strong style={{ color: 'var(--text-primary)', fontWeight: 750 }}>Audit Note: </strong>
-            Metrics are shown as verified platform-level snapshots for documented periods. They represent recorded channel observations rather than isolated causal business claims.
+            Metrics reflect verified platform analytics for documented periods, representing recorded channel data.
           </div>
         </div>
       </div>

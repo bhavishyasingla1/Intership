@@ -12,37 +12,37 @@ const activities: TimelineActivity[] = [
   {
     number: '01',
     period: 'JANUARY 2026',
-    title: 'Establishing the foundation',
-    summary: 'Focused on digital presence, profile standardization, content direction, and initial channel consistency across platforms.',
-    evidence: 'Channel setup records & profile standardization audit'
+    title: 'Foundation & Brand Presence',
+    summary: 'Standardized digital profiles, established brand consistency, and aligned content strategy.',
+    evidence: 'Channel setup records & profile audit'
   },
   {
     number: '02',
     period: 'FEBRUARY – MARCH 2026',
-    title: 'Content, search & distribution',
-    summary: 'Expanded content operations, improved YouTube channel structure, and began using Search Console to guide broader educational search work.',
-    evidence: 'Search Console query audits & YouTube Studio analytics'
+    title: 'Search & Content Growth',
+    summary: 'Expanded educational content, structured YouTube channels, and analyzed Search Console queries.',
+    evidence: 'Search Console audits & YouTube analytics'
   },
   {
     number: '03',
     period: 'APRIL – MAY 2026',
-    title: 'Building the web layer',
-    summary: 'Revamped the main website, restructured curriculum and book resources, integrated the CUDO chatbot, and created campaign experiences.',
-    evidence: 'Production codju.com release & CUDO widget integration'
+    title: 'Web Platforms & UX',
+    summary: 'Revamped the primary Codju website, organized curriculum resources, and integrated the CUDO chatbot.',
+    evidence: 'Production codju.com release & CUDO widget'
   },
   {
     number: '04',
     period: 'SUMMER 2026',
-    title: 'Building systems & tools',
-    summary: 'Built internal marketing tools, campaign landing pages (summercamp.codju.com), TeachBoost.in, and WhatsApp workflow infrastructure.',
-    evidence: 'Live TeachBoost.in build & WhatsApp Cloud API hub worker'
+    title: 'Systems & Operations',
+    summary: 'Built internal marketing tools, TeachBoost.in, camp funnels, and automated WhatsApp workflows.',
+    evidence: 'Live TeachBoost.in & WhatsApp Worker hub'
   },
   {
     number: '05',
     period: 'SEPTEMBER 2026',
-    title: 'Measurement & experimentation',
-    summary: 'Added behavioral measurement through GA4 and Microsoft Clarity, and continued experimenting with workflow automation and AI-assisted builds.',
-    evidence: 'Active Clarity dashboard (yi2ur6p2il) & GA4 property'
+    title: 'Analytics & AI Workflows',
+    summary: 'Implemented GA4 and Microsoft Clarity tracking, with AI-assisted workflow automation.',
+    evidence: 'Active Clarity dashboard & GA4 property'
   }
 ];
 
@@ -53,13 +53,13 @@ export const Timeline: React.FC = () => {
         {/* Section Header */}
         <div className="section-header" style={{ maxWidth: '720px', margin: '0 auto 48px auto', textAlign: 'center' }}>
           <div className="section-eyebrow" style={{ margin: '0 auto 12px auto' }}>
-            CHRONOLOGICAL RECORD
+            TIMELINE
           </div>
           <h2 className="section-title">
-            How the work changed over nine months.
+            Nine months of progress.
           </h2>
           <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            An activity-driven timeline documenting the actual work executed month by month.
+            Key milestones and shipped initiatives from January to September 2026.
           </p>
         </div>
 

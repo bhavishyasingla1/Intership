@@ -12,28 +12,28 @@ export const AIAutomationSection: React.FC = () => {
 
   const initiatives = [
     {
-      title: 'AI-Assisted Engineering',
+      title: 'AI-Assisted Web Scaffolding',
       tag: 'WEB DEVELOPMENT',
       icon: Code2,
-      summary: 'Used AI coding workflows for component scaffolding and responsive layout prototyping on TeachBoost and campaign pages.'
+      summary: 'Used AI coding workflows for component scaffolding and responsive layout prototyping on TeachBoost and campaign funnels.'
     },
     {
-      title: 'Conversational Web Layer',
-      tag: 'CUDO INTEGRATION',
+      title: 'CUDO Conversational Assistant',
+      tag: 'CHAT INTEGRATION',
       icon: Bot,
-      summary: 'Integrated CUDO to provide an interactive guidance layer on the main website, answering curriculum queries and guiding educators.'
+      summary: 'Integrated CUDO to provide an interactive guidance layer on the website, answering visitor queries and guiding school leaders.'
     },
     {
-      title: 'Distribution Automation',
+      title: 'Workflow & Lead Automation',
       tag: 'WORKFLOW HOOKS',
       icon: Zap,
-      summary: 'Constructed comment-to-DM routing and notification triggers to direct engaged educators directly to relevant pedagogy articles.'
+      summary: 'Constructed comment-to-DM routing and webhook notifications to direct interested prospects to relevant resources.'
     },
     {
-      title: 'Generative Media & Video',
+      title: 'Generative Media Production',
       tag: 'HYBRID PRODUCTION',
       icon: Film,
-      summary: 'Experimented with AI visual generation, curriculum packaging, and paced video workflows to support multi-channel campaigns.'
+      summary: 'Combined AI visual generation, curriculum previews, and video editing to support multi-channel educational campaigns.'
     }
   ];
 
@@ -50,26 +50,27 @@ export const AIAutomationSection: React.FC = () => {
     >
       <div className="container">
         {/* Section Header */}
-        <div className="section-header" style={{ maxWidth: '680px', marginBottom: '24px' }}>
-          <div className="section-eyebrow">
-            SYSTEMS & EXPERIMENTATION
+        <div className="section-header" style={{ maxWidth: '720px', margin: '0 auto 36px auto', textAlign: 'center' }}>
+          <div className="section-eyebrow" style={{ margin: '0 auto 12px auto' }}>
+            AUTOMATION & AI
           </div>
           <h2 className="section-title">
-            AI became another tool in the workflow.
+            AI-assisted workflows.
           </h2>
-          <p className="section-subtitle">
-            Used AI-assisted development, generative media, and lightweight automation to prototype, iterate, and ship faster.
+          <p className="section-subtitle" style={{ margin: '0 auto' }}>
+            Using AI tools and lightweight scripts to prototype, iterate, and ship faster.
           </p>
         </div>
 
         {/* Compact, Restrained Execution Pipeline Banner */}
         <div
           style={{
+            maxWidth: '960px',
+            margin: '0 auto 28px auto',
             backgroundColor: '#f8fafc',
             border: '1px solid var(--border-subtle)',
             borderRadius: 'var(--radius-md)',
-            padding: '14px 18px',
-            marginBottom: '24px',
+            padding: '14px 20px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -214,22 +215,26 @@ export const AIAutomationSection: React.FC = () => {
         {/* Quiet Grounded Takeaway */}
         <div
           style={{
-            padding: '14px 18px',
+            maxWidth: '820px',
+            margin: '0 auto',
+            padding: '14px 20px',
             backgroundColor: '#f8fafc',
             border: '1px solid var(--border-subtle)',
             borderRadius: 'var(--radius-md)',
             display: 'flex',
             alignItems: 'center',
+            justifyContent: 'center',
             gap: '10px',
-            fontSize: '12.5px',
+            fontSize: '13px',
             color: 'var(--text-secondary)',
-            lineHeight: 1.45
+            lineHeight: 1.45,
+            textAlign: 'center'
           }}
         >
           <CheckCircle2 size={16} color="var(--brand-accent)" style={{ flexShrink: 0 }} />
           <span>
             <strong style={{ color: 'var(--text-primary)', fontWeight: 700 }}>Practical takeaway: </strong>
-            Not every experiment shipped directly — early exploratory attempts on third-party APIs clarified rate limits, authentication constraints, and where human discretion is non-negotiable.
+            Early API experiments clarified rate limits, authentication constraints, and where human review is critical.
           </span>
         </div>
       </div>

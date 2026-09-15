@@ -62,7 +62,7 @@ export const ProjectOverview: React.FC = () => {
   return (
     <div style={{ marginTop: '56px', borderTop: '1px solid var(--border-subtle)', paddingTop: '44px' }}>
       {/* Subtitle */}
-      <div style={{ marginBottom: '24px', maxWidth: '640px' }}>
+      <div style={{ marginBottom: '32px', maxWidth: '720px', margin: '0 auto 32px auto', textAlign: 'center' }}>
         <div
           style={{
             fontSize: '11px',
@@ -70,24 +70,24 @@ export const ProjectOverview: React.FC = () => {
             color: 'var(--brand-primary)',
             letterSpacing: '0.08em',
             textTransform: 'uppercase',
-            marginBottom: '6px'
+            marginBottom: '8px'
           }}
         >
-          CURATED INITIATIVES
+          OTHER INITIATIVES
         </div>
         <h3
           style={{
-            fontSize: 'clamp(20px, 2.2vw, 24px)',
+            fontSize: 'clamp(22px, 2.4vw, 28px)',
             fontWeight: 800,
             color: 'var(--text-primary)',
             letterSpacing: '-0.02em',
-            marginBottom: '6px'
+            marginBottom: '8px'
           }}
         >
-          Additional work & experiments.
+          Additional projects & experiments.
         </h3>
-        <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
-          Supporting marketing workflows, creative experiments, and distribution tests documented across the internship.
+        <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.5, margin: '0 auto' }}>
+          Supporting marketing workflows, audience tests, and technical experiments.
         </p>
       </div>
 

@@ -5,19 +5,19 @@ export const NextChapter: React.FC = () => {
   const directions = [
     {
       title: 'Growth & Distribution',
-      description: 'Building discoverability pipelines through structured search content, video restructuring, and consistent brand presence.'
+      description: 'Building organic search pipelines, structured content, and video distribution.'
     },
     {
-      title: 'Marketing Technology & Systems',
-      description: 'Engineering internal tools, API integrations, and operational workspaces that streamline team execution.'
+      title: 'Marketing Systems & APIs',
+      description: 'Engineering internal tools, Cloudflare Workers, and API workflows that save team time.'
     },
     {
-      title: 'Web & Conversion',
-      description: 'Architecting responsive web portals, curriculum pages, and focused campaign landing experiences.'
+      title: 'Web Platforms & Funnels',
+      description: 'Architecting responsive web portals, resource hubs, and campaign conversion funnels.'
     },
     {
-      title: 'AI-Enabled Workflows',
-      description: 'Applying AI as a practical execution multiplier for rapid scaffolding, content systems, and automation.'
+      title: 'AI-Accelerated Building',
+      description: 'Using AI tooling for rapid scaffolding, content operations, and prototype delivery.'
     }
   ];
 
@@ -35,44 +35,46 @@ export const NextChapter: React.FC = () => {
             boxShadow: 'var(--shadow-sm)'
           }}
         >
-          <div className="section-eyebrow" style={{ marginBottom: '12px' }}>
-            WHERE THIS EXPERIENCE POINTS NEXT
+          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 32px auto' }}>
+            <div className="section-eyebrow" style={{ margin: '0 auto 12px auto' }}>
+              LOOKING FORWARD
+            </div>
+
+            <h2
+              style={{
+                fontSize: 'clamp(26px, 3vw, 34px)',
+                fontWeight: 800,
+                color: 'var(--text-primary)',
+                letterSpacing: '-0.02em',
+                marginBottom: '12px'
+              }}
+            >
+              What comes next.
+            </h2>
+
+            <div
+              style={{
+                fontSize: '17px',
+                fontWeight: 700,
+                color: 'var(--brand-primary)',
+                lineHeight: 1.45,
+                marginBottom: '12px'
+              }}
+            >
+              “Started in marketing. Grew into the systems and technology behind it.”
+            </div>
+
+            <p
+              style={{
+                fontSize: '15px',
+                color: 'var(--text-secondary)',
+                lineHeight: 1.6,
+                margin: '0 auto'
+              }}
+            >
+              Nine months at Codju clarified my focus: building at the intersection of web platforms, data, and AI automation.
+            </p>
           </div>
-
-          <h2
-            style={{
-              fontSize: 'clamp(24px, 2.8vw, 32px)',
-              fontWeight: 800,
-              color: 'var(--text-primary)',
-              letterSpacing: '-0.02em',
-              marginBottom: '14px'
-            }}
-          >
-            Where this experience points next.
-          </h2>
-
-          <div
-            style={{
-              fontSize: '18px',
-              fontWeight: 750,
-              color: 'var(--brand-primary)',
-              lineHeight: 1.45,
-              marginBottom: '14px'
-            }}
-          >
-            “I came in through marketing. I found myself increasingly interested in the systems behind it.”
-          </div>
-
-          <p
-            style={{
-              fontSize: '15px',
-              color: 'var(--text-secondary)',
-              lineHeight: 1.6,
-              marginBottom: '32px'
-            }}
-          >
-            Nine months at Codju made me most interested in problems where marketing, technology, data and AI meet. Websites, data, workflows, automation and AI became part of the work I wanted to understand and build.
-          </p>
 
           {/* Symmetrical 4-Card 2x2 Grid (Document 12 Section 53 & 56) */}
           <div

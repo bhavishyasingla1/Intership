@@ -10,7 +10,7 @@ export const WhatChangedSection: React.FC = () => {
       color: 'var(--brand-primary)',
       bgColor: 'rgba(124, 58, 237, 0.08)',
       borderColor: 'rgba(124, 58, 237, 0.22)',
-      tag: '6 Core Systems Delivered',
+      tag: '6 Systems Delivered',
       items: [
         { highlight: 'Main Website & Camp Funnels', desc: 'codju.com revamped & summercamp.codju.com launched' },
         { highlight: 'WhatsApp Operations Hub', desc: 'Edge-hosted Cloudflare Worker & lead routing pipeline' },
@@ -22,7 +22,7 @@ export const WhatChangedSection: React.FC = () => {
     },
     {
       category: 'MEASURED',
-      title: 'What the data shows.',
+      title: 'What data recorded.',
       icon: BarChart2,
       color: 'var(--brand-accent)',
       bgColor: 'rgba(22, 163, 74, 0.08)',
@@ -38,12 +38,12 @@ export const WhatChangedSection: React.FC = () => {
     },
     {
       category: 'ITERATING',
-      title: 'What is still being tested.',
+      title: 'What is in progress.',
       icon: Sparkles,
       color: '#d97706',
       bgColor: 'rgba(217, 119, 6, 0.08)',
       borderColor: 'rgba(217, 119, 6, 0.22)',
-      tag: '5 Active R&D Tracks',
+      tag: '5 Active Tracks',
       items: [
         { highlight: 'Non-Brand Search Ranking', desc: 'Expanding ranking footprint for AI & pedagogy terms' },
         { highlight: 'LLM & AI-Oriented SEO', desc: 'Structuring web schema for AI engine search citations' },
@@ -58,15 +58,15 @@ export const WhatChangedSection: React.FC = () => {
     <section id="what-changed" className="section" style={{ backgroundColor: '#ffffff', borderTop: '1px solid var(--border-subtle)' }}>
       <div className="container">
         {/* Section Header */}
-        <div className="section-header" style={{ maxWidth: '720px' }}>
-          <div className="section-eyebrow">
-            BUSINESS CONTEXT
+        <div className="section-header" style={{ maxWidth: '720px', margin: '0 auto 44px auto', textAlign: 'center' }}>
+          <div className="section-eyebrow" style={{ margin: '0 auto 12px auto' }}>
+            OVERVIEW
           </div>
           <h2 className="section-title">
             What changed.
           </h2>
-          <p className="section-subtitle">
-            A grounded summary of what was delivered, what the available data recorded, and what remains under active experimentation.
+          <p className="section-subtitle" style={{ margin: '0 auto' }}>
+            A clear summary of delivered systems, verified data, and ongoing tests.
           </p>
         </div>
 

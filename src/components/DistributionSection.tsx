@@ -20,24 +20,26 @@ export const DistributionSection: React.FC = () => {
     {
       id: 'linkedin',
       tag: 'LINKEDIN',
-      title: 'Brand presence & content',
+      title: 'LinkedIn Presence & Growth',
       icon: LinkedinIcon,
       iconColor: '#0a66c2',
       iconBg: 'rgba(10, 102, 194, 0.1)',
       borderAccent: 'rgba(10, 102, 194, 0.18)',
-      summary: "Maintained consistent publishing schedules, content planning, and professional identity across Codju's company profile.",
+      summary: "Maintained consistent publishing schedules, content planning, and distribution across Codju's company page, alongside managing Nitish's LinkedIn profile.",
       metricValue: '1,597',
       metricUnit: 'followers',
       subMetric: '76.8K impressions · 2,745 reactions',
-      insight: 'High engagement on curriculum pedagogy & updates.',
+      insight: "High engagement on curriculum pedagogy & updates; actively managed Nitish's LinkedIn profile.",
       source: 'LinkedIn Analytics',
       buttonLabel: 'Company Page',
-      url: 'https://www.linkedin.com/company/codjutech/posts/?feedView=all'
+      url: 'https://www.linkedin.com/company/codjutech/posts/?feedView=all',
+      secondaryButtonLabel: "Nitish's Profile",
+      secondaryUrl: 'https://www.linkedin.com/in/nitishcodju/?skipRedirect=true'
     },
     {
       id: 'youtube',
       tag: 'YOUTUBE',
-      title: 'YouTube restructuring',
+      title: 'YouTube SEO & Channels',
       icon: YoutubeIcon,
       iconColor: '#dc2626',
       iconBg: 'rgba(239, 68, 68, 0.1)',
@@ -54,7 +56,7 @@ export const DistributionSection: React.FC = () => {
     {
       id: 'google',
       tag: 'GOOGLE BUSINESS',
-      title: 'Local & search presence',
+      title: 'Local Google Presence',
       icon: MapPin,
       iconColor: '#16a34a',
       iconBg: 'rgba(34, 197, 94, 0.1)',
@@ -92,15 +94,15 @@ export const DistributionSection: React.FC = () => {
     >
       <div className="container">
         {/* Section Header */}
-        <div className="section-header" style={{ maxWidth: '680px', marginBottom: '28px' }}>
-          <div className="section-eyebrow">
-            DISTRIBUTION & DISCOVERABILITY
+        <div className="section-header" style={{ maxWidth: '720px', margin: '0 auto 40px auto', textAlign: 'center' }}>
+          <div className="section-eyebrow" style={{ margin: '0 auto 12px auto' }}>
+            DISTRIBUTION
           </div>
           <h2 className="section-title">
-            Making Codju easier to find.
+            Discoverability & reach.
           </h2>
-          <p className="section-subtitle">
-            Worked across the channels where educators, schools and prospects encounter Codju.
+          <p className="section-subtitle" style={{ margin: '0 auto' }}>
+            Search optimization, educational content, and multi-channel audience growth.
           </p>
         </div>
 
@@ -260,29 +262,63 @@ export const DistributionSection: React.FC = () => {
                     <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 600 }}>
                       Source: {card.source}
                     </span>
-                    <a
-                      href={card.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        fontSize: '11.5px',
-                        fontWeight: 750,
-                        color: card.iconColor,
-                        backgroundColor: card.iconBg,
-                        padding: '5px 12px',
-                        borderRadius: 'var(--radius-sm)',
-                        textDecoration: 'none',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '5px',
-                        transition: 'opacity 0.15s ease'
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
-                      onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
-                    >
-                      <span>{card.buttonLabel}</span>
-                      <ExternalLink size={11} />
-                    </a>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                      <a
+                        href={card.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontSize: '11.5px',
+                          fontWeight: 750,
+                          color: card.iconColor,
+                          backgroundColor: card.iconBg,
+                          padding: '5px 12px',
+                          borderRadius: 'var(--radius-sm)',
+                          textDecoration: 'none',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '5px',
+                          transition: 'opacity 0.15s ease'
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
+                        onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+                      >
+                        <span>{card.buttonLabel}</span>
+                        <ExternalLink size={11} />
+                      </a>
+                      {card.secondaryUrl && card.secondaryButtonLabel && (
+                        <a
+                          href={card.secondaryUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            fontSize: '11.5px',
+                            fontWeight: 700,
+                            color: 'var(--text-secondary)',
+                            backgroundColor: '#ffffff',
+                            border: '1px solid var(--border-subtle)',
+                            padding: '5px 10px',
+                            borderRadius: 'var(--radius-sm)',
+                            textDecoration: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '5px',
+                            transition: 'all 0.15s ease'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.borderColor = 'var(--brand-primary)';
+                            e.currentTarget.style.color = 'var(--brand-primary)';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.borderColor = 'var(--border-subtle)';
+                            e.currentTarget.style.color = 'var(--text-secondary)';
+                          }}
+                        >
+                          <span>{card.secondaryButtonLabel}</span>
+                          <ExternalLink size={11} />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -321,11 +357,11 @@ export const DistributionSection: React.FC = () => {
                 </div>
               </div>
               <h3 style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text-primary)', margin: 0 }}>
-                One unified presence across all official channels
+                Unified presence across official channels
               </h3>
             </div>
             <p style={{ fontSize: '12.5px', color: 'var(--text-secondary)', margin: 0, maxWidth: '440px', lineHeight: 1.45 }}>
-              Standardized typography, visual tone, and verified profiles across every public Codju touchpoint.
+              Standardized typography, visual tone, and verified profiles across all public platforms.
             </p>
           </div>
 

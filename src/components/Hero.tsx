@@ -31,43 +31,43 @@ export const Hero: React.FC = () => {
             {/* Small quiet eyebrow */}
             <div
               style={{
-                fontSize: '12.5px',
-                fontWeight: 700,
+                fontSize: '12px',
+                fontWeight: 750,
                 color: 'var(--brand-primary)',
-                letterSpacing: '0.04em',
+                letterSpacing: '0.06em',
+                textTransform: 'uppercase',
                 marginBottom: '14px',
                 display: 'inline-block'
               }}
             >
-              Marketing Intern — Growth & Brand
+              Marketing & Systems Intern
             </div>
 
             {/* Large H1 anchor */}
             <h1
               style={{
-                fontSize: 'clamp(36px, 4.4vw, 56px)',
+                fontSize: 'clamp(34px, 4.2vw, 54px)',
                 fontWeight: 800,
-                lineHeight: 1.1,
+                lineHeight: 1.12,
                 color: 'var(--text-primary)',
                 letterSpacing: '-0.025em',
-                marginBottom: '18px'
+                marginBottom: '16px'
               }}
             >
-              Nine months of building at <span style={{ color: 'var(--brand-primary)' }}>Codju</span>.
+              Internship at <span style={{ color: 'var(--brand-primary)' }}>Codju</span>.
             </h1>
 
             {/* Short supporting paragraph */}
             <p
               style={{
-                fontSize: 'clamp(16.5px, 1.7vw, 18.5px)',
+                fontSize: 'clamp(16px, 1.6vw, 18px)',
                 lineHeight: 1.55,
                 color: 'var(--text-secondary)',
                 marginBottom: '26px',
                 fontWeight: 400
               }}
             >
-              I started with growth and brand. Over time, the work moved into websites,
-              SEO, analytics, marketing systems, automation and AI-assisted development.
+              Started with brand and organic growth, then scaled into web architecture, SEO, analytics, and AI-assisted automation.
             </p>
 
             {/* CTAs */}
@@ -81,11 +81,11 @@ export const Hero: React.FC = () => {
               }}
             >
               <a href="#flagship" className="btn btn-primary">
-                <span>SEE WHAT I BUILT</span>
+                <span>EXPLORE MY WORK</span>
                 <Layers size={15} />
               </a>
               <a href="#numbers" className="btn btn-secondary">
-                <span>SEE THE EVIDENCE</span>
+                <span>VERIFIED EVIDENCE</span>
                 <ArrowRight size={15} />
               </a>
             </div>
@@ -116,8 +116,6 @@ export const Hero: React.FC = () => {
               >
                 Codju Technologies
               </a>
-              <span>•</span>
-              <span>~9 months</span>
               <span>•</span>
               <span>2026</span>
               <span>•</span>
@@ -155,8 +153,8 @@ export const Hero: React.FC = () => {
 
       <style>{`
         @media (min-width: 960px) {
-          .hero-text-col { grid-column: span 7 !important; }
-          .hero-visual-col { grid-column: span 5 !important; }
+          .hero-text-col { grid-column: span 6 !important; }
+          .hero-visual-col { grid-column: span 6 !important; }
         }
       `}</style>
     </section>

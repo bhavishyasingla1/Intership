@@ -104,7 +104,7 @@ export const Footer: React.FC = () => {
                   textTransform: 'uppercase'
                 }}
               >
-                Documented Case Study Record
+                Documented Case Study
               </span>
             </div>
 
@@ -121,7 +121,7 @@ export const Footer: React.FC = () => {
             </h3>
 
             <p style={{ fontSize: '14px', color: '#cbd5e1', lineHeight: 1.5, margin: 0 }}>
-              Growth × Web × Analytics × AI — Nine months of building digital visibility, web experiences, and operational systems at Codju Technologies.
+              Growth × Web × Analytics × AI — Nine months of building web systems, analytics pipelines, and tools at Codju.
             </p>
           </div>
 
@@ -317,42 +317,6 @@ export const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-
-            {/* Nitish Profile Link Card */}
-            <a
-              href="https://www.linkedin.com/in/nitishcodju/?skipRedirect=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '10px 14px',
-                backgroundColor: 'rgba(100, 22, 184, 0.12)',
-                border: '1px solid rgba(168, 85, 247, 0.25)',
-                borderRadius: 'var(--radius-sm)',
-                textDecoration: 'none',
-                transition: 'all 0.15s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(168, 85, 247, 0.6)';
-                e.currentTarget.style.backgroundColor = 'rgba(100, 22, 184, 0.22)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(168, 85, 247, 0.25)';
-                e.currentTarget.style.backgroundColor = 'rgba(100, 22, 184, 0.12)';
-              }}
-            >
-              <div>
-                <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#f8fafc' }}>
-                  Nitish
-                </div>
-                <div style={{ fontSize: '11px', color: '#c084fc' }}>
-                  Managed LinkedIn Profile
-                </div>
-              </div>
-              <ArrowUpRight size={13} color="#c084fc" />
-            </a>
           </div>
         </div>
 

@@ -5,38 +5,38 @@ export const AtAGlance: React.FC = () => {
   const progressionSteps = [
     {
       stage: 'STARTED WITH',
-      title: 'Digital presence',
+      title: 'Brand & Presence',
       detail: 'Content consistency, social channels, and public profile presentation.'
     },
     {
       stage: 'THEN',
-      title: 'Discoverability + Web',
-      detail: 'Search Console query analysis, topic blogs, and main website revamp.'
+      title: 'Search & SEO',
+      detail: 'Search Console query analysis, educational blogs, and website revamp.'
     },
     {
       stage: 'THEN',
-      title: 'Systems + Measurement',
-      detail: 'WhatsApp Hub, content workspace, and GA4 / Clarity behavioral tracking.'
+      title: 'Systems & Data',
+      detail: 'WhatsApp Hub, content workspace, and GA4 / Clarity tracking.'
     },
     {
       stage: 'NOW',
-      title: 'Automation + AI',
-      detail: 'Lightweight automations, AI-assisted builds, and iterative execution.'
+      title: 'AI & Automation',
+      detail: 'Workflow automations, AI-assisted development, and rapid execution.'
     }
   ];
 
   return (
     <section id="glance" className="section" style={{ backgroundColor: '#ffffff', paddingTop: '80px', paddingBottom: '80px' }}>
       <div className="container">
-        <div style={{ maxWidth: '780px', marginBottom: '44px' }}>
-          <div className="section-eyebrow">
-            THE CENTRAL STORY
+        <div className="section-header" style={{ maxWidth: '720px', margin: '0 auto 44px auto', textAlign: 'center' }}>
+          <div className="section-eyebrow" style={{ margin: '0 auto 12px auto' }}>
+            THE STORY
           </div>
           <h2 className="section-title">
-            From presence to infrastructure.
+            From brand to infrastructure.
           </h2>
-          <p className="section-subtitle">
-            I started by improving how Codju showed up online. As I understood the ecosystem better, the work moved directly into building the web experiences, measurement layers, and systems behind it.
+          <p className="section-subtitle" style={{ margin: '0 auto' }}>
+            How my role grew from public brand consistency into architecting web systems, tracking, and automation.
           </p>
         </div>
 

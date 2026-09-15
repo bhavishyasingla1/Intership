@@ -97,7 +97,9 @@ button, input, select, textarea {
 }
 
 .section-header {
-  margin-bottom: 44px;
+  max-width: 720px;
+  margin: 0 auto 44px auto;
+  text-align: center;
 }
 
 .section-eyebrow {
@@ -105,31 +107,34 @@ button, input, select, textarea {
   align-items: center;
   gap: 8px;
   font-family: var(--font-family);
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 11.5px;
+  font-weight: 750;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
   color: var(--brand-primary);
   background: var(--brand-primary-subtle);
   padding: 5px 12px;
   border-radius: var(--radius-full);
-  margin-bottom: 14px;
+  margin: 0 auto 12px auto;
 }
 
 .section-title {
-  font-size: clamp(32px, 3.8vw, 44px);
+  font-size: clamp(30px, 3.6vw, 42px);
   font-weight: 800;
-  line-height: 1.18;
-  margin-bottom: 14px;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
 }
 
 .section-subtitle {
-  font-size: clamp(16px, 1.8vw, 19px);
+  font-size: clamp(15.5px, 1.6vw, 18px);
   color: var(--text-secondary);
-  max-width: var(--max-width-reading);
+  max-width: 640px;
+  margin: 0 auto;
   line-height: 1.55;
-  font-weight: 400;
+  font-weight: 450;
+  text-align: center;
 }
 
 /* Button System (Restrained, no neon glow, radius 8-10px) */
