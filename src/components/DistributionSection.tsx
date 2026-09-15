@@ -32,7 +32,7 @@ export const DistributionSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 3-Column Editorial Grid: YouTube, LinkedIn, Google Business (§§ 8–14) */}
+        {/* 3-Column Editorial Grid: YouTube, LinkedIn, Google Business */}
         <div
           style={{
             display: 'grid',
@@ -41,24 +41,25 @@ export const DistributionSection: React.FC = () => {
             marginBottom: '32px'
           }}
         >
-          {/* CARD 1: YouTube Restructuring & Discoverability (§§ 10–11) */}
+          {/* CARD 1: YouTube */}
           <div style={{ gridColumn: 'span 12' }} className="dist-grid-card">
             <div
               className="card"
               style={{
-                padding: '28px',
+                padding: '24px 26px',
                 backgroundColor: '#ffffff',
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 border: '1px solid var(--border-subtle)',
-                borderRadius: 'var(--radius-lg)'
+                borderRadius: 'var(--radius-lg)',
+                boxShadow: '0 2px 8px -2px rgba(0,0,0,0.04)'
               }}
             >
               <div>
                 {/* Header Badge */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                   <div
                     style={{
                       width: '36px',
@@ -75,51 +76,73 @@ export const DistributionSection: React.FC = () => {
                     <YoutubeIcon size={20} />
                   </div>
                   <div>
-                    <span style={{ fontSize: '11px', fontWeight: 750, color: 'var(--brand-primary)', letterSpacing: '0.07em', textTransform: 'uppercase' }}>
+                    <span style={{ fontSize: '11px', fontWeight: 800, color: '#dc2626', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                       YOUTUBE
                     </span>
-                    <h3 style={{ fontSize: '19px', fontWeight: 800, color: 'var(--text-primary)', margin: 0, lineHeight: 1.25 }}>
-                      YouTube restructuring & discoverability
+                    <h3 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--text-primary)', margin: 0, lineHeight: 1.25 }}>
+                      YouTube restructuring
                     </h3>
                   </div>
                 </div>
 
-                {/* Description (Small & Concise) */}
-                <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.55, marginBottom: '20px' }}>
-                  Reworked playlists, titles, descriptions, metadata and channel presentation to make the library more consistent and searchable.
+                {/* Description */}
+                <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '16px', minHeight: '38px' }}>
+                  Reworked playlists, titles, descriptions, metadata and channel presentation to make the library searchable.
                 </p>
 
-                {/* Primary Metrics (Visually Large & Clear § 11) */}
+                {/* Metrics Box */}
                 <div
                   style={{
                     backgroundColor: '#f8fafc',
                     border: '1px solid var(--border-subtle)',
                     borderRadius: 'var(--radius-md)',
-                    padding: '16px 18px',
+                    padding: '16px',
                     marginBottom: '16px'
                   }}
                 >
                   <div style={{ fontSize: '28px', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '6px' }}>
-                    75.5K <span style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-secondary)' }}>views</span>
+                    75.5K <span style={{ fontSize: '14px', fontWeight: 650, color: 'var(--text-secondary)' }}>views</span>
                   </div>
-                  <div style={{ fontSize: '13.5px', fontWeight: 650, color: 'var(--text-secondary)', marginBottom: '6px' }}>
+                  <div style={{ fontSize: '13px', fontWeight: 650, color: 'var(--text-secondary)', marginBottom: '10px' }}>
                     1.9K watch hours · +1.2K subscribers
                   </div>
-                  <div style={{ fontSize: '12px', fontWeight: 750, color: 'var(--brand-primary)' }}>
-                    18.1% Search · 11.5% Playlists
+                  <div
+                    style={{
+                      fontSize: '12px',
+                      color: 'var(--text-primary)',
+                      backgroundColor: 'rgba(239, 68, 68, 0.06)',
+                      border: '1px solid rgba(239, 68, 68, 0.18)',
+                      borderRadius: 'var(--radius-sm)',
+                      padding: '6px 10px',
+                      lineHeight: 1.4
+                    }}
+                  >
+                    <span style={{ fontWeight: 750, color: '#dc2626' }}>Insight:</span> 18.1% discovered via search; 11.5% via playlists.
                   </div>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-subtle)', paddingTop: '10px' }}>
-                <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
-                  Source: YouTube Analytics · selected 365-day period
+              {/* Card Footer */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-subtle)', paddingTop: '12px', marginTop: 'auto' }}>
+                <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 600 }}>
+                  Source: YouTube Analytics
                 </span>
                 <a
                   href="https://www.youtube.com/@codjutech/videos"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ fontSize: '11.5px', fontWeight: 700, color: '#dc2626', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '3px' }}
+                  style={{
+                    fontSize: '11.5px',
+                    fontWeight: 750,
+                    color: '#dc2626',
+                    backgroundColor: 'rgba(239, 68, 68, 0.08)',
+                    padding: '4px 10px',
+                    borderRadius: 'var(--radius-sm)',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                  }}
                 >
                   <span>Channel</span>
                   <ExternalLink size={11} />
@@ -128,24 +151,25 @@ export const DistributionSection: React.FC = () => {
             </div>
           </div>
 
-          {/* CARD 2: LinkedIn Brand Presence & Content (§ 12) */}
+          {/* CARD 2: LinkedIn */}
           <div style={{ gridColumn: 'span 12' }} className="dist-grid-card">
             <div
               className="card"
               style={{
-                padding: '28px',
+                padding: '24px 26px',
                 backgroundColor: '#ffffff',
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 border: '1px solid var(--border-subtle)',
-                borderRadius: 'var(--radius-lg)'
+                borderRadius: 'var(--radius-lg)',
+                boxShadow: '0 2px 8px -2px rgba(0,0,0,0.04)'
               }}
             >
               <div>
                 {/* Header Badge */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                   <div
                     style={{
                       width: '36px',
@@ -162,51 +186,73 @@ export const DistributionSection: React.FC = () => {
                     <LinkedinIcon size={20} />
                   </div>
                   <div>
-                    <span style={{ fontSize: '11px', fontWeight: 750, color: 'var(--brand-primary)', letterSpacing: '0.07em', textTransform: 'uppercase' }}>
+                    <span style={{ fontSize: '11px', fontWeight: 800, color: '#0a66c2', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                       LINKEDIN
                     </span>
-                    <h3 style={{ fontSize: '19px', fontWeight: 800, color: 'var(--text-primary)', margin: 0, lineHeight: 1.25 }}>
+                    <h3 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--text-primary)', margin: 0, lineHeight: 1.25 }}>
                       Brand presence & content
                     </h3>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.55, marginBottom: '20px' }}>
-                  Maintained consistent publishing, content planning and brand presentation across Codju's LinkedIn presence.
+                <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '16px', minHeight: '38px' }}>
+                  Maintained consistent publishing, content planning and professional identity across Codju's company profile.
                 </p>
 
-                {/* Primary Metrics (§ 12: 1,597 followers primary, 76.8K impressions & 2,745 reactions secondary) */}
+                {/* Metrics Box */}
                 <div
                   style={{
                     backgroundColor: '#f8fafc',
                     border: '1px solid var(--border-subtle)',
                     borderRadius: 'var(--radius-md)',
-                    padding: '16px 18px',
+                    padding: '16px',
                     marginBottom: '16px'
                   }}
                 >
                   <div style={{ fontSize: '28px', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '6px' }}>
-                    1,597 <span style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-secondary)' }}>followers</span>
+                    1,597 <span style={{ fontSize: '14px', fontWeight: 650, color: 'var(--text-secondary)' }}>followers</span>
                   </div>
-                  <div style={{ fontSize: '13.5px', fontWeight: 650, color: 'var(--text-secondary)', marginBottom: '6px' }}>
+                  <div style={{ fontSize: '13px', fontWeight: 650, color: 'var(--text-secondary)', marginBottom: '10px' }}>
                     76.8K impressions · 2,745 reactions
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-                    Annual platform engagement snapshot
+                  <div
+                    style={{
+                      fontSize: '12px',
+                      color: 'var(--text-primary)',
+                      backgroundColor: 'rgba(10, 102, 194, 0.06)',
+                      border: '1px solid rgba(10, 102, 194, 0.18)',
+                      borderRadius: 'var(--radius-sm)',
+                      padding: '6px 10px',
+                      lineHeight: 1.4
+                    }}
+                  >
+                    <span style={{ fontWeight: 750, color: '#0a66c2' }}>Insight:</span> High engagement on curriculum pedagogy & updates.
                   </div>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-subtle)', paddingTop: '10px' }}>
-                <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
+              {/* Card Footer */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-subtle)', paddingTop: '12px', marginTop: 'auto' }}>
+                <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 600 }}>
                   Source: LinkedIn Analytics
                 </span>
                 <a
                   href="https://www.linkedin.com/company/codjutech/posts/?feedView=all"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ fontSize: '11.5px', fontWeight: 700, color: '#0a66c2', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '3px' }}
+                  style={{
+                    fontSize: '11.5px',
+                    fontWeight: 750,
+                    color: '#0a66c2',
+                    backgroundColor: 'rgba(10, 102, 194, 0.08)',
+                    padding: '4px 10px',
+                    borderRadius: 'var(--radius-sm)',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                  }}
                 >
                   <span>Company Page</span>
                   <ExternalLink size={11} />
@@ -215,24 +261,25 @@ export const DistributionSection: React.FC = () => {
             </div>
           </div>
 
-          {/* CARD 3: Google Business Profile (§§ 13–14) */}
+          {/* CARD 3: Google Business */}
           <div style={{ gridColumn: 'span 12' }} className="dist-grid-card">
             <div
               className="card"
               style={{
-                padding: '28px',
+                padding: '24px 26px',
                 backgroundColor: '#ffffff',
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 border: '1px solid var(--border-subtle)',
-                borderRadius: 'var(--radius-lg)'
+                borderRadius: 'var(--radius-lg)',
+                boxShadow: '0 2px 8px -2px rgba(0,0,0,0.04)'
               }}
             >
               <div>
                 {/* Header Badge */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                   <div
                     style={{
                       width: '36px',
@@ -249,87 +296,107 @@ export const DistributionSection: React.FC = () => {
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <span style={{ fontSize: '11px', fontWeight: 750, color: 'var(--brand-accent)', letterSpacing: '0.07em', textTransform: 'uppercase' }}>
+                    <span style={{ fontSize: '11px', fontWeight: 800, color: '#16a34a', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                       GOOGLE BUSINESS
                     </span>
-                    <h3 style={{ fontSize: '19px', fontWeight: 800, color: 'var(--text-primary)', margin: 0, lineHeight: 1.25 }}>
+                    <h3 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--text-primary)', margin: 0, lineHeight: 1.25 }}>
                       Local & search presence
                     </h3>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.55, marginBottom: '20px' }}>
-                  Maintained and improved Codju's Google Business presence while monitoring how people discovered the company.
+                <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '16px', minHeight: '38px' }}>
+                  Managed Codju's Google Business identity and tracked institutional search volume and interactions.
                 </p>
 
-                {/* Primary Metrics (§ 13: 42.0K views, 11.6K searches, 37 interactions) */}
+                {/* Metrics Box */}
                 <div
                   style={{
                     backgroundColor: '#f8fafc',
                     border: '1px solid var(--border-subtle)',
                     borderRadius: 'var(--radius-md)',
-                    padding: '16px 18px',
+                    padding: '16px',
                     marginBottom: '16px'
                   }}
                 >
                   <div style={{ fontSize: '28px', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '6px' }}>
-                    42.0K <span style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-secondary)' }}>profile views</span>
+                    42.0K <span style={{ fontSize: '14px', fontWeight: 650, color: 'var(--text-secondary)' }}>profile views</span>
                   </div>
-                  <div style={{ fontSize: '13.5px', fontWeight: 650, color: 'var(--text-secondary)', marginBottom: '6px' }}>
+                  <div style={{ fontSize: '13px', fontWeight: 650, color: 'var(--text-secondary)', marginBottom: '10px' }}>
                     11.6K searches · 37 interactions
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-                    April–September 2026 documented snapshot
+                  <div
+                    style={{
+                      fontSize: '12px',
+                      color: 'var(--text-primary)',
+                      backgroundColor: 'rgba(34, 197, 94, 0.06)',
+                      border: '1px solid rgba(34, 197, 94, 0.18)',
+                      borderRadius: 'var(--radius-sm)',
+                      padding: '6px 10px',
+                      lineHeight: 1.4
+                    }}
+                  >
+                    <span style={{ fontWeight: 750, color: '#16a34a' }}>Insight:</span> Discovery remained brand-led (~11K 'Codju' searches).
                   </div>
                 </div>
               </div>
 
-              <div>
-                {/* Search Discovery Insight (§ 14) */}
-                <div style={{ fontSize: '12px', color: 'var(--text-primary)', fontWeight: 650, lineHeight: 1.45, marginBottom: '10px' }}>
-                  <span style={{ color: 'var(--brand-primary)' }}>Insight:</span> Discovery remained strongly brand-led. ‘Codju’ accounted for the majority of observed searches (~11K).
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-subtle)', paddingTop: '10px' }}>
-                  <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
-                    Source: Google Business Profile · Apr–Sep 2026
-                  </span>
-                  <a
-                    href="https://share.google/74j2gsdUwcflPEkmp"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ fontSize: '11.5px', fontWeight: 750, color: '#16a34a', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '3px' }}
-                  >
-                    <span>Profile</span>
-                    <ExternalLink size={11} />
-                  </a>
-                </div>
+              {/* Card Footer */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-subtle)', paddingTop: '12px', marginTop: 'auto' }}>
+                <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 600 }}>
+                  Source: Google Business Profile
+                </span>
+                <a
+                  href="https://share.google/74j2gsdUwcflPEkmp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: '11.5px',
+                    fontWeight: 750,
+                    color: '#16a34a',
+                    backgroundColor: 'rgba(34, 197, 94, 0.08)',
+                    padding: '4px 10px',
+                    borderRadius: 'var(--radius-sm)',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                  }}
+                >
+                  <span>Profile</span>
+                  <ExternalLink size={11} />
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Social Consistency Horizontal Statement (§ 15) */}
+        {/* Social Consistency Horizontal Statement */}
         <div
           style={{
             backgroundColor: '#ffffff',
             border: '1px solid var(--border-subtle)',
-            borderRadius: 'var(--radius-md)',
+            borderRadius: 'var(--radius-lg)',
             padding: '20px 24px',
             marginBottom: '32px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
-            gap: '16px'
+            gap: '16px',
+            boxShadow: '0 2px 6px -2px rgba(0,0,0,0.03)'
           }}
         >
-          <div style={{ maxWidth: '600px' }}>
-            <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--brand-primary)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '4px' }}>
-              ONE BRAND. ACROSS THE CHANNELS.
+          <div style={{ maxWidth: '580px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--brand-accent)' }} />
+              <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--brand-primary)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                ONE BRAND. ACROSS ALL CHANNELS.
+              </div>
             </div>
-            <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
-              Standardized naming, visuals, positioning and profile presentation across Codju's major digital touchpoints.
+            <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
+              Standardized naming, typography, visual positioning, and profile presentation across Codju's digital touchpoints.
             </p>
           </div>
 
@@ -348,21 +415,29 @@ export const DistributionSection: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  fontSize: '12px',
+                  fontSize: '11.5px',
                   fontWeight: 700,
                   color: 'var(--text-primary)',
-                  backgroundColor: 'var(--bg-subtle)',
-                  padding: '5px 11px',
+                  backgroundColor: '#f8fafc',
+                  padding: '6px 12px',
                   borderRadius: 'var(--radius-sm)',
                   border: '1px solid var(--border-subtle)',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '5px',
+                  gap: '6px',
                   textDecoration: 'none',
-                  transition: 'border-color 0.15s ease'
+                  transition: 'all 0.15s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--brand-primary)';
+                  e.currentTarget.style.backgroundColor = '#ffffff';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--border-subtle)';
+                  e.currentTarget.style.backgroundColor = '#f8fafc';
                 }}
               >
-                <Check size={11} color="var(--brand-accent)" />
+                <Check size={12} color="var(--brand-accent)" strokeWidth={2.5} />
                 <span>{ch.name}</span>
                 <ExternalLink size={10} color="var(--text-muted)" />
               </a>
@@ -370,25 +445,58 @@ export const DistributionSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Subtle Transition after Distribution (§ 17) */}
+        {/* Editorial Narrative Bridge */}
         <div
           style={{
+            maxWidth: '680px',
+            margin: '0 auto',
             textAlign: 'center',
-            paddingTop: '12px',
+            padding: '24px 20px 8px 20px',
             borderTop: '1px dashed var(--border-subtle)'
           }}
         >
-          <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', fontWeight: 650, marginBottom: '8px' }}>
+          <div
+            style={{
+              fontSize: '11px',
+              fontWeight: 800,
+              color: 'var(--text-muted)',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              marginBottom: '8px'
+            }}
+          >
+            NARRATIVE EVOLUTION
+          </div>
+          <p style={{ fontSize: '15px', color: 'var(--text-primary)', fontWeight: 700, lineHeight: 1.5, marginBottom: '10px' }}>
             “Once the channels were in place, the next question was what sat behind them.”
           </p>
-          <div style={{ fontSize: '12.5px', fontWeight: 750, color: 'var(--brand-primary)', letterSpacing: '0.06em' }}>
-            CONTENT → WEB → SYSTEMS → MEASUREMENT
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontSize: '11.5px',
+              fontWeight: 800,
+              color: 'var(--brand-primary)',
+              letterSpacing: '0.06em',
+              backgroundColor: 'var(--brand-primary-subtle)',
+              padding: '6px 14px',
+              borderRadius: '20px'
+            }}
+          >
+            <span>CONTENT</span>
+            <span>→</span>
+            <span>WEB</span>
+            <span>→</span>
+            <span>SYSTEMS</span>
+            <span>→</span>
+            <span>MEASUREMENT</span>
           </div>
         </div>
       </div>
 
       <style>{`
-        @media (min-width: 900px) {
+        @media (min-width: 960px) {
           .dist-grid-card { grid-column: span 4 !important; }
         }
       `}</style>
