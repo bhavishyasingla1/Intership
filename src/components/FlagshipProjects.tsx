@@ -141,7 +141,7 @@ const flagshipData: FlagshipDefinition[] = [
     highlights: [
       { label: 'Educator Portal', text: 'Built responsive workshop registration, module schedules, and curriculum discovery.' },
       { label: 'AI Scaffolding', text: 'Utilized rapid AI coding workflows for component scaffolding and layout iterations.' },
-      { label: 'Resource Hub', text: 'Created downloadable lesson plans, classroom activity sheets, and pedagogy frameworks.' },
+      { label: 'Workshop Modules', text: 'Structured interactive module breakdowns and educator workshop pathways.' },
       { label: 'Brand Cohesion', text: 'Preserved standalone TeachBoost branding while connecting with Codju curriculums.' }
     ]
   },

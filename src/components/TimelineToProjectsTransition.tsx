@@ -61,14 +61,18 @@ export const TimelineToProjectsTransition: React.FC = () => {
 
         {/* Quiet Progression Spine */}
         <div
+          className="transition-spine-container"
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            flexWrap: 'wrap',
+            flexWrap: 'nowrap',
             gap: '8px',
             fontSize: '13px',
-            fontWeight: 700
+            fontWeight: 700,
+            overflowX: 'auto',
+            paddingBottom: '4px',
+            maxWidth: '100%'
           }}
         >
           {spineStages.map((stage, idx) => {
@@ -81,19 +85,30 @@ export const TimelineToProjectsTransition: React.FC = () => {
                     backgroundColor: isLast ? 'rgba(88, 204, 2, 0.1)' : 'var(--bg-subtle)',
                     padding: '4px 12px',
                     borderRadius: 'var(--radius-sm)',
-                    border: '1px solid var(--border-subtle)'
+                    border: '1px solid var(--border-subtle)',
+                    whiteSpace: 'nowrap',
+                    flexShrink: 0
                   }}
                 >
                   {stage}
                 </span>
                 {!isLast && (
-                  <span style={{ color: 'var(--text-muted)', userSelect: 'none' }}>→</span>
+                  <span style={{ color: 'var(--text-muted)', userSelect: 'none', flexShrink: 0 }}>→</span>
                 )}
               </React.Fragment>
             );
           })}
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .transition-spine-container {
+            justify-content: flex-start !important;
+            padding-left: 12px;
+            padding-right: 12px;
+          }
+        }
+      `}</style>
     </section>
   );
 };
