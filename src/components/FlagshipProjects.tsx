@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { ProjectVisualPlaceholder } from './ProjectVisualPlaceholder';
-import { ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
+import { ExternalLink, ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
+
+interface FlagshipHighlight {
+  label: string;
+  text: string;
+}
 
 interface FlagshipDefinition {
   id: string;
@@ -18,6 +23,7 @@ interface FlagshipDefinition {
   whatIDid: string[];
   learning: string;
   tools: string[];
+  highlights: FlagshipHighlight[];
 }
 
 const flagshipData: FlagshipDefinition[] = [
@@ -25,8 +31,8 @@ const flagshipData: FlagshipDefinition[] = [
   {
     id: 'codju-website',
     number: '01',
-    title: 'Codju Website & Web Experiences',
-    category: 'Product / Web Architecture',
+    title: 'Codju Web Platform',
+    category: 'Web Architecture',
     whyContext: "The main website needed to evolve with Codju's expanding content, offerings and campaigns.",
     myContribution: 'Revamped and expanded the main Codju website across structure, content, resources, blog visual system, and supporting functionality.',
     whatExistsNow: 'Updated and expanded web experience deployed at codju.com with resource hubs, blog visual system, and interactive navigation.',
@@ -43,15 +49,21 @@ const flagshipData: FlagshipDefinition[] = [
       'Embedded the interactive CUDO assistant for immediate visitor inquiry handling.'
     ],
     learning: 'Web design for school leaders requires clarity, curriculum compliance, and consistent visual storytelling over arbitrary decoration.',
-    tools: ['HTML5', 'Modern CSS', 'Responsive Grid', 'Component Architecture', 'Chatbot Integration', 'Visual Design']
+    tools: ['HTML5', 'Modern CSS', 'Responsive Grid', 'Component Architecture', 'Chatbot Integration', 'Visual Design'],
+    highlights: [
+      { label: 'Product Architecture', text: 'Restructured into clean pillars for Products, Books, Platform, and Training.' },
+      { label: 'Curriculum Compliance', text: 'Modular sections highlighting NEP 2020 alignment and CBSE circular guidelines.' },
+      { label: 'Editorial Brand System', text: 'Character illustration storytelling for long-form blog heroes and curriculum guides.' },
+      { label: 'Conversational Layer', text: 'Embedded CUDO interactive assistant for immediate school inquiry handling.' }
+    ]
   },
 
   // 02 WhatsApp Marketing Operations Hub
   {
     id: 'whatsapp-hub',
     number: '02',
-    title: 'WhatsApp Marketing Operations Hub',
-    category: 'Internal Marketing System',
+    title: 'WhatsApp Operations Hub',
+    category: 'Internal Marketing Tool',
     whyContext: 'WhatsApp outreach required a more structured way to manage contacts, audiences and broadcasts.',
     myContribution: 'Built an internal marketing operations interface for contacts, audiences and broadcast workflows.',
     whatExistsNow: 'An internal marketing operations system handling contacts, audiences, broadcasts, and campaigns.',
@@ -67,14 +79,20 @@ const flagshipData: FlagshipDefinition[] = [
       'Trained team members on list hygiene and compliance standards.'
     ],
     learning: 'Internal tools only succeed if they eliminate friction for the people who operate them daily.',
-    tools: ['Meta WhatsApp Cloud API', 'Audience Segmentation', 'Broadcast Workflows', 'Internal Operations']
+    tools: ['Meta WhatsApp Cloud API', 'Audience Segmentation', 'Broadcast Workflows', 'Internal Operations'],
+    highlights: [
+      { label: 'Cloud API Integration', text: 'Connected Meta WhatsApp Cloud API for authenticated school messaging.' },
+      { label: 'Audience Segmentation', text: 'Contact list organization with tag-based filters for educators and school leads.' },
+      { label: 'Broadcast Workflows', text: 'Structured outbound campaign flows for workshops, camps, and curriculum updates.' },
+      { label: 'Operational Hub', text: 'Replaced scattered personal spreadsheets with a centralized auditable workspace.' }
+    ]
   },
 
   // 03 Content Operations Dashboard
   {
     id: 'content-operations',
     number: '03',
-    title: 'Content Operations Dashboard',
+    title: 'Content Operations Hub',
     category: 'Workflow Infrastructure',
     whyContext: 'Content planning needed structure across social and written content.',
     myContribution: 'Built a centralized workspace for planning, organizing and tracking content through publishing stages.',
@@ -91,15 +109,21 @@ const flagshipData: FlagshipDefinition[] = [
       'Standardized asset attachment guidelines for carousels, blog hero images, and newsletters.'
     ],
     learning: 'The value of a content operations system is predictability and consistent cadence, not arbitrary content volume.',
-    tools: ['Cloudflare Workers', 'Workflow Design', 'Multi-channel Calendar', 'State Management']
+    tools: ['Cloudflare Workers', 'Workflow Design', 'Multi-channel Calendar', 'State Management'],
+    highlights: [
+      { label: 'Production Pipeline', text: 'Designed unified 4-stage Kanban workflow: Planning → Draft → Ready → Published.' },
+      { label: 'Serverless Backend', text: 'Deployed collaborative state synchronization on Cloudflare Workers.' },
+      { label: 'Editorial Calendar', text: 'Aligned publication schedules across LinkedIn, YouTube, blogs, and newsletters.' },
+      { label: 'Asset Checklists', text: 'Standardized guidelines for carousels, blog graphics, and pedagogical copy.' }
+    ]
   },
 
   // 04 TeachBoost.in Platform Build
   {
     id: 'teachboost',
     number: '04',
-    title: 'TeachBoost.in',
-    category: 'Educator Enablement Platform',
+    title: 'TeachBoost.in Web Portal',
+    category: 'Educator Platform',
     whyContext: 'Built the website experience for TeachBoost on top of the existing project.',
     myContribution: 'Developed the web experience with AI-assisted workflows and collaboration from the team.',
     whatExistsNow: 'A standalone educator enablement web platform at teachboost.in supporting teacher workshops.',
@@ -115,15 +139,21 @@ const flagshipData: FlagshipDefinition[] = [
       'Ensured seamless cross-linking with Codju curriculum resources while preserving TeachBoost brand identity.'
     ],
     learning: 'Building on existing foundations requires aligning with established standards while iterating quickly on user experience.',
-    tools: ['Responsive Web Development', 'AI-assisted Workflows', 'Component Scaffolding', 'LMS UI/UX']
+    tools: ['Responsive Web Development', 'AI-assisted Workflows', 'Component Scaffolding', 'LMS UI/UX'],
+    highlights: [
+      { label: 'Educator Portal', text: 'Built responsive workshop registration, module schedules, and curriculum discovery.' },
+      { label: 'AI Scaffolding', text: 'Utilized rapid AI coding workflows for component scaffolding and layout iterations.' },
+      { label: 'Resource Hub', text: 'Created downloadable lesson plans, classroom activity sheets, and pedagogy frameworks.' },
+      { label: 'Brand Cohesion', text: 'Preserved standalone TeachBoost branding while connecting with Codju curriculums.' }
+    ]
   },
 
   // 05 Campaign Landing Pages
   {
     id: 'campaign-landing',
     number: '05',
-    title: 'Campaign Landing Pages',
-    category: 'Conversion Web Experiences',
+    title: 'Campaign Landing Funnels',
+    category: 'Conversion Pages',
     whyContext: 'Campaigns needed focused web experiences rather than sending every audience to the same page.',
     myContribution: 'Designed and built campaign-specific landing experiences combining content, UX, web implementation and visual media.',
     whatExistsNow: 'Targeted campaign landing experiences under the Codju ecosystem combining visual curriculum previews and transparent enrollment funnels.',
@@ -139,15 +169,21 @@ const flagshipData: FlagshipDefinition[] = [
       'Integrated registration CTAs and tracking elements for campaign attribution.'
     ],
     learning: 'Campaign landing pages require progressive disclosure: hook with student outcomes, follow with week-by-week curriculum, and remove friction.',
-    tools: ['Responsive Web Design', 'Conversion Copywriting', 'Visual Asset Integration', 'CTA Funnels']
+    tools: ['Responsive Web Design', 'Conversion Copywriting', 'Visual Asset Integration', 'CTA Funnels'],
+    highlights: [
+      { label: 'Summer Camp Funnel', text: 'High-converting registration flow with transparent pricing at summercamp.codju.com.' },
+      { label: 'Computational Thinking', text: 'Dedicated pedagogy landing experience at codju.com/computational-thinking.' },
+      { label: 'Curriculum Previews', text: 'Designed weekly project breakdowns and creative coding showcases for parents.' },
+      { label: 'Dual Funnels', text: 'Engineered fast-path enrollment buttons and curriculum syllabus downloads.' }
+    ]
   },
 
   // 06 SEO + Content Strategy
   {
     id: 'seo-search',
     number: '06',
-    title: 'SEO + Content Strategy',
-    category: 'SEO & Content Architecture',
+    title: 'SEO & Content Engine',
+    category: 'Search Architecture',
     whyContext: 'Search data showed that Codju was already discoverable for its own brand, while broader topic discovery represented an opportunity.',
     myContribution: 'Worked on topic-focused content, internal linking, technical SEO, and search-oriented content structure.',
     whatExistsNow: 'An organized organic discovery library connecting educational blogs, guides, case studies, and curriculum intent.',
@@ -162,15 +198,21 @@ const flagshipData: FlagshipDefinition[] = [
       'EXPERIMENT: Experimented with structuring useful, source-rich content with AI-assisted discovery in mind, plus external publishing tests.'
     ],
     learning: 'Long-form content became part of the website, content and discoverability strategy, not just a publishing task.',
-    tools: ['Google Search Console', 'Topic Modeling', 'Information Architecture', 'Semantic SEO']
+    tools: ['Google Search Console', 'Topic Modeling', 'Information Architecture', 'Semantic SEO'],
+    highlights: [
+      { label: 'Search Console Audit', text: 'Audited queries, identifying high-intent non-branded topic opportunities.' },
+      { label: 'Semantic Clusters', text: 'Restructured educational blogs and guides with topic clusters and internal linking.' },
+      { label: 'AI/LLM Retrieval', text: 'Structured source-rich, cited content optimized for modern AI search engines.' },
+      { label: 'Funnel Integration', text: 'Connected informational search readers directly to curriculum demo requests.' }
+    ]
   },
 
   // 07 AI / Hybrid Video Production
   {
     id: 'ai-video-production',
     number: '07',
-    title: 'AI / Hybrid Video Production',
-    category: 'Creative Experimentation',
+    title: 'AI Video Production',
+    category: 'Creative Media',
     whyContext: 'Promoting new initiatives like Computational Thinking called for creative experimentation beyond standard static posts.',
     myContribution: 'Experimented with combining AI-generated elements, real footage, audio pacing and editing into a promotional video.',
     whatExistsNow: 'A hybrid promotional video workflow merging AI-generated conceptual imagery with real classroom footage for Computational Thinking.',
@@ -185,7 +227,13 @@ const flagshipData: FlagshipDefinition[] = [
       'Packaged the final video for multi-channel release across YouTube and campaign channels.'
     ],
     learning: 'Hybrid production allows rapid visual conceptualization while retaining human storytelling and real classroom footage.',
-    tools: ['Generative Media', 'Video Sequencing', 'Storyboarding', 'Creative Editing']
+    tools: ['Generative Media', 'Video Sequencing', 'Storyboarding', 'Creative Editing'],
+    highlights: [
+      { label: 'Hybrid Production', text: 'Merged AI-generated conceptual visual elements with authentic classroom footage.' },
+      { label: 'Paced Editing', text: 'Scripted and edited multi-track pacing for the Computational Thinking promotional release.' },
+      { label: 'Creative Shorts', text: 'Produced dynamic animated Shorts featuring the Codju mascot and camp previews.' },
+      { label: 'Audio Branding', text: 'Composed and produced the original Codju theme song for brand identity.' }
+    ]
   }
 ];
 
@@ -195,6 +243,7 @@ export interface ShowcaseVideo {
   category: string;
   isShort?: boolean;
 }
+
 
 export const aiVideos: ShowcaseVideo[] = [
   { id: 'dP5Cmo3I1ko', title: 'Computational Thinking (Promotional Video)', category: 'Main Promo' },
@@ -243,15 +292,15 @@ export const FlagshipProjects: React.FC = () => {
     <section id="flagship" className="section" style={{ backgroundColor: '#ffffff', borderTop: '1px solid var(--border-subtle)' }}>
       <div className="container">
         {/* Section Header */}
-        <div className="section-header" style={{ maxWidth: '720px' }}>
-          <div className="section-eyebrow">
-            FLAGSHIP BUILDS
+        <div className="section-header" style={{ maxWidth: '720px', margin: '0 auto 40px auto', textAlign: 'center' }}>
+          <div className="section-eyebrow" style={{ margin: '0 auto 12px auto' }}>
+            PROJECTS
           </div>
           <h2 className="section-title">
             What I built.
           </h2>
-          <p className="section-subtitle">
-            Seven primary systems, websites and experiences across the internship — framed through context, action, output, and evidence.
+          <p className="section-subtitle" style={{ margin: '0 auto' }}>
+            Seven core systems, web platforms, and operational tools built at Codju.
           </p>
         </div>
 
@@ -260,6 +309,7 @@ export const FlagshipProjects: React.FC = () => {
           style={{
             display: 'flex',
             flexWrap: 'wrap',
+            justifyContent: 'center',
             gap: '8px',
             marginBottom: '36px'
           }}
@@ -309,11 +359,11 @@ export const FlagshipProjects: React.FC = () => {
         <div
           className="card"
           style={{
-            padding: '36px',
+            padding: '24px 28px',
             backgroundColor: '#ffffff',
             border: '1px solid var(--border-subtle)',
             borderRadius: 'var(--radius-lg)',
-            boxShadow: 'var(--shadow-card)'
+            boxShadow: '0 4px 20px -4px rgba(0, 0, 0, 0.05)'
           }}
         >
           {/* Header Row with Clear Visual Hierarchy */}
@@ -323,47 +373,47 @@ export const FlagshipProjects: React.FC = () => {
               alignItems: 'flex-start',
               justifyContent: 'space-between',
               flexWrap: 'wrap',
-              gap: '16px',
+              gap: '12px',
               borderBottom: '1px solid var(--border-subtle)',
-              paddingBottom: '24px',
-              marginBottom: '28px'
+              paddingBottom: '16px',
+              marginBottom: '22px'
             }}
           >
             <div>
               <div
                 style={{
-                  fontSize: '11.5px',
-                  fontWeight: 750,
+                  fontSize: '11px',
+                  fontWeight: 800,
                   color: 'var(--brand-primary)',
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  marginBottom: '6px'
+                  marginBottom: '4px'
                 }}
               >
                 PROJECT {activeProject.number} • {activeProject.category}
               </div>
               <h3
                 style={{
-                  fontSize: 'clamp(24px, 2.8vw, 32px)',
+                  fontSize: 'clamp(20px, 2.2vw, 25px)',
                   fontWeight: 800,
                   color: 'var(--text-primary)',
                   margin: 0,
                   letterSpacing: '-0.02em',
-                  lineHeight: 1.2
+                  lineHeight: 1.25
                 }}
               >
                 {activeProject.title}
               </h3>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
               <span
                 style={{
-                  fontSize: '12px',
+                  fontSize: '11.5px',
                   fontWeight: 750,
                   backgroundColor: activeProject.isInternal ? 'rgba(100, 22, 184, 0.08)' : 'rgba(88, 204, 2, 0.1)',
                   color: activeProject.isInternal ? 'var(--brand-primary)' : 'var(--brand-accent)',
-                  padding: '5px 12px',
+                  padding: '4px 10px',
                   borderRadius: 'var(--radius-sm)',
                   letterSpacing: '0.04em'
                 }}
@@ -372,26 +422,26 @@ export const FlagshipProjects: React.FC = () => {
               </span>
 
               {activeProject.id === 'campaign-landing' ? (
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <a
                     href="https://summercamp.codju.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-sm btn-secondary"
-                    style={{ gap: '6px' }}
+                    style={{ gap: '5px', fontSize: '11.5px', padding: '5px 12px' }}
                   >
-                    <span>VIEW SUMMER CAMP</span>
-                    <ExternalLink size={12} />
+                    <span>SUMMER CAMP</span>
+                    <ExternalLink size={11} />
                   </a>
                   <a
                     href="https://codju.com/computational-thinking/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-sm btn-secondary"
-                    style={{ gap: '6px' }}
+                    style={{ gap: '5px', fontSize: '11.5px', padding: '5px 12px' }}
                   >
-                    <span>VIEW COMPUTATIONAL THINKING</span>
-                    <ExternalLink size={12} />
+                    <span>COMPUTATIONAL THINKING</span>
+                    <ExternalLink size={11} />
                   </a>
                 </div>
               ) : activeProject.liveUrl && (
@@ -400,16 +450,16 @@ export const FlagshipProjects: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-sm btn-secondary"
-                  style={{ gap: '6px' }}
+                  style={{ gap: '5px', fontSize: '11.5px', padding: '5px 12px' }}
                 >
                   <span>
                     {activeProject.id === 'ai-video-production'
-                      ? 'WATCH ON YOUTUBE'
+                      ? 'YOUTUBE VIDEO'
                       : activeProject.isInternal
                       ? 'OPEN DASHBOARD'
                       : 'VIEW SITE'}
                   </span>
-                  <ExternalLink size={12} />
+                  <ExternalLink size={11} />
                 </a>
               )}
             </div>
@@ -420,360 +470,85 @@ export const FlagshipProjects: React.FC = () => {
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(12, 1fr)',
-              gap: '36px',
+              gap: '28px',
               alignItems: 'start'
             }}
           >
-            {/* Left Column: The 4 Core Project Questions (Context → Action → Output → Evidence) */}
+            {/* Left Column: Focused Executive Summary & Highlights */}
             <div style={{ gridColumn: 'span 12' }} className="case-study-content-col">
-              {/* Question 1: WHY (CONTEXT) */}
-              <div style={{ marginBottom: '20px' }}>
-                <span
-                  style={{
-                    fontSize: '11px',
-                    fontWeight: 750,
-                    color: 'var(--text-muted)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    display: 'block',
-                    marginBottom: '6px'
-                  }}
-                >
-                  01 • WHY THE WORK EXISTED (CONTEXT)
-                </span>
-                <p
-                  style={{
-                    fontSize: '16px',
-                    color: 'var(--text-primary)',
-                    fontWeight: 700,
-                    lineHeight: 1.5,
-                    margin: 0
-                  }}
-                >
-                  "{activeProject.whyContext}"
-                </p>
-              </div>
-
-              {/* Question 2: WHAT I DID (ACTION) */}
-              <div style={{ marginBottom: '20px' }}>
-                <span
-                  style={{
-                    fontSize: '11px',
-                    fontWeight: 750,
-                    color: 'var(--text-muted)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    display: 'block',
-                    marginBottom: '6px'
-                  }}
-                >
-                  02 • MY CONTRIBUTION (ACTION)
-                </span>
-                <p
-                  style={{
-                    fontSize: '14.5px',
-                    color: 'var(--text-secondary)',
-                    lineHeight: 1.55,
-                    margin: 0
-                  }}
-                >
-                  {activeProject.myContribution}
-                </p>
-              </div>
-
-              {/* Project-Specific Editorial Workflow / Context Box */}
-              {activeProject.id === 'codju-website' && (
-                <div
-                  style={{
-                    backgroundColor: '#f8fafc',
-                    border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-md)',
-                    padding: '16px 18px',
-                    marginBottom: '20px'
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-                    <span style={{ fontSize: '11px', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                      CONTENT DESIGN • BLOG HERO SYSTEM
-                    </span>
-                    <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--brand-primary)' }}>Visual Identity</span>
-                  </div>
-                  <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.5, margin: '0 0 12px 0' }}>
-                    Built a consistent visual language for Codju's long-form content using brand characters and an approachable educational style (adapting Duolingo-inspired character storytelling into Codju's own brand language).
-                  </p>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
-                    <div style={{ backgroundColor: '#ffffff', border: '1px dashed var(--border-subtle)', borderRadius: '6px', padding: '12px 8px', textAlign: 'center' }}>
-                      <div style={{ fontSize: '11px', fontWeight: 750, color: 'var(--text-primary)' }}>AI & Pedagogy</div>
-                      <div style={{ fontSize: '10px', color: 'var(--text-muted)', marginTop: '2px' }}>Character Storyframe 01</div>
-                    </div>
-                    <div style={{ backgroundColor: '#ffffff', border: '1px dashed var(--border-subtle)', borderRadius: '6px', padding: '12px 8px', textAlign: 'center' }}>
-                      <div style={{ fontSize: '11px', fontWeight: 750, color: 'var(--text-primary)' }}>Computational Thinking</div>
-                      <div style={{ fontSize: '10px', color: 'var(--text-muted)', marginTop: '2px' }}>Character Storyframe 02</div>
-                    </div>
-                    <div style={{ backgroundColor: '#ffffff', border: '1px dashed var(--border-subtle)', borderRadius: '6px', padding: '12px 8px', textAlign: 'center' }}>
-                      <div style={{ fontSize: '11px', fontWeight: 750, color: 'var(--text-primary)' }}>Skill Curriculums</div>
-                      <div style={{ fontSize: '10px', color: 'var(--text-muted)', marginTop: '2px' }}>Character Storyframe 03</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {activeProject.id === 'whatsapp-hub' && (
-                <div
-                  style={{
-                    backgroundColor: '#f8fafc',
-                    border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-md)',
-                    padding: '14px 18px',
-                    marginBottom: '20px'
-                  }}
-                >
-                  <span style={{ fontSize: '11px', fontWeight: 750, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '8px' }}>
-                    WHAT IT HANDLES
-                  </span>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                    {['Contacts', 'Audiences', 'Broadcasts', 'Campaigns'].map((item) => (
-                      <span key={item} style={{ fontSize: '12px', fontWeight: 700, color: 'var(--brand-primary)', backgroundColor: 'var(--brand-primary-subtle)', padding: '4px 10px', borderRadius: '4px' }}>
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {activeProject.id === 'content-operations' && (
-                <div
-                  style={{
-                    backgroundColor: '#f8fafc',
-                    border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-md)',
-                    padding: '14px 18px',
-                    marginBottom: '20px'
-                  }}
-                >
-                  <span style={{ fontSize: '11px', fontWeight: 750, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '8px' }}>
-                    CONTENT WORKFLOW
-                  </span>
-                  <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '6px', fontSize: '12px', fontWeight: 700 }}>
-                    <span style={{ color: 'var(--text-primary)', backgroundColor: '#ffffff', border: '1px solid var(--border-subtle)', padding: '3px 8px', borderRadius: '4px' }}>Planning</span>
-                    <span style={{ color: 'var(--text-muted)' }}>→</span>
-                    <span style={{ color: 'var(--text-primary)', backgroundColor: '#ffffff', border: '1px solid var(--border-subtle)', padding: '3px 8px', borderRadius: '4px' }}>Draft</span>
-                    <span style={{ color: 'var(--text-muted)' }}>→</span>
-                    <span style={{ color: 'var(--text-primary)', backgroundColor: '#ffffff', border: '1px solid var(--border-subtle)', padding: '3px 8px', borderRadius: '4px' }}>Ready</span>
-                    <span style={{ color: 'var(--brand-accent)', backgroundColor: 'rgba(88, 204, 2, 0.1)', padding: '3px 8px', borderRadius: '4px' }}>Published</span>
-                  </div>
-                </div>
-              )}
-
-              {activeProject.id === 'campaign-landing' && (
-                <div
-                  style={{
-                    backgroundColor: '#f8fafc',
-                    border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-md)',
-                    padding: '16px 18px',
-                    marginBottom: '20px'
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-                    <span style={{ fontSize: '11px', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                      CAMPAIGN EXPERIENCES & TOUCHPOINTS
-                    </span>
-                    <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--brand-primary)' }}>Live Conversion Pages</span>
-                  </div>
-                  <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.5, margin: '0 0 12px 0' }}>
-                    Engineered dedicated standalone conversion experiences for Codju's summer programs and pedagogy initiatives:
-                  </p>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: '10px' }}>
-                    <a
-                      href="https://summercamp.codju.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        padding: '10px 14px',
-                        backgroundColor: '#ffffff',
-                        border: '1px solid var(--border-subtle)',
-                        borderRadius: 'var(--radius-sm)',
-                        textDecoration: 'none',
-                        color: 'var(--text-primary)',
-                        fontSize: '12.5px',
-                        fontWeight: 700,
-                        transition: 'all 0.15s ease'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = 'var(--brand-primary)';
-                        e.currentTarget.style.color = 'var(--brand-primary)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = 'var(--border-subtle)';
-                        e.currentTarget.style.color = 'var(--text-primary)';
-                      }}
-                    >
-                      <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <span>Codju Summer Camp</span>
-                        <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 500 }}>summercamp.codju.com</span>
-                      </div>
-                      <ExternalLink size={13} color="var(--brand-primary)" />
-                    </a>
-
-                    <a
-                      href="https://codju.com/computational-thinking/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        padding: '10px 14px',
-                        backgroundColor: '#ffffff',
-                        border: '1px solid var(--border-subtle)',
-                        borderRadius: 'var(--radius-sm)',
-                        textDecoration: 'none',
-                        color: 'var(--text-primary)',
-                        fontSize: '12.5px',
-                        fontWeight: 700,
-                        transition: 'all 0.15s ease'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = 'var(--brand-primary)';
-                        e.currentTarget.style.color = 'var(--brand-primary)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = 'var(--border-subtle)';
-                        e.currentTarget.style.color = 'var(--text-primary)';
-                      }}
-                    >
-                      <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <span>Computational Thinking</span>
-                        <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 500 }}>codju.com/computational-thinking</span>
-                      </div>
-                      <ExternalLink size={13} color="var(--brand-primary)" />
-                    </a>
-                  </div>
-                </div>
-              )}
-
-              {activeProject.id === 'seo-search' && (
-                <div
-                  style={{
-                    backgroundColor: '#f8fafc',
-                    border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-md)',
-                    padding: '16px 18px',
-                    marginBottom: '20px'
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-                    <span style={{ fontSize: '11px', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                      CONTENT & DISCOVERY RELATIONSHIP
-                    </span>
-                    <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--brand-primary)' }}>SEO Strategy</span>
-                  </div>
-                  {/* Sequence: TOPIC → CONTENT → SEARCH → DISCOVERY */}
-                  <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '6px', fontSize: '11.5px', fontWeight: 750, marginBottom: '12px' }}>
-                    <span style={{ color: 'var(--text-primary)', backgroundColor: '#ffffff', border: '1px solid var(--border-subtle)', padding: '3px 8px', borderRadius: '4px' }}>TOPIC</span>
-                    <span style={{ color: 'var(--text-muted)' }}>→</span>
-                    <span style={{ color: 'var(--brand-primary)', backgroundColor: 'var(--brand-primary-subtle)', padding: '3px 8px', borderRadius: '4px' }}>CONTENT</span>
-                    <span style={{ color: 'var(--text-muted)' }}>→</span>
-                    <span style={{ color: 'var(--brand-primary)', backgroundColor: 'var(--brand-primary-subtle)', padding: '3px 8px', borderRadius: '4px' }}>SEARCH</span>
-                    <span style={{ color: 'var(--text-muted)' }}>→</span>
-                    <span style={{ color: 'var(--brand-accent)', backgroundColor: 'rgba(88, 204, 2, 0.1)', padding: '3px 8px', borderRadius: '4px' }}>DISCOVERY</span>
-                  </div>
-                  <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', fontSize: '12.5px', color: 'var(--text-secondary)', marginBottom: '10px' }}>
-                    <span>• <strong style={{ color: 'var(--text-primary)' }}>Blogs</strong> (Curriculum insights)</span>
-                    <span>• <strong style={{ color: 'var(--text-primary)' }}>Guides</strong> (Computational thinking)</span>
-                    <span>• <strong style={{ color: 'var(--text-primary)' }}>Case studies</strong> (Pedagogy & outcomes)</span>
-                  </div>
-                  <div style={{ fontSize: '12.5px', color: 'var(--text-secondary)', fontStyle: 'italic', borderTop: '1px solid var(--border-subtle)', paddingTop: '8px', marginBottom: '8px' }}>
-                    "Long-form content became part of the website, content and discoverability strategy."
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px', fontSize: '11px', color: 'var(--text-muted)' }}>
-                    <div>• <strong>AI/LLM Search:</strong> Structuring source-rich content for modern discovery.</div>
-                    <div>• <strong>Backlinks:</strong> External publishing experiment for organic authority.</div>
-                  </div>
-                </div>
-              )}
-
-              {activeProject.id === 'ai-video-production' && (
-                <div
-                  style={{
-                    backgroundColor: '#f8fafc',
-                    border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-md)',
-                    padding: '16px 18px',
-                    marginBottom: '20px'
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-                    <span style={{ fontSize: '11px', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                      PRODUCTION WORKFLOW
-                    </span>
-                    <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--brand-primary)' }}>Hybrid Video Production</span>
-                  </div>
-                  {/* Sequence: IDEA → AI GENERATION → REAL FOOTAGE → EDITING → FINAL VIDEO */}
-                  <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '6px', fontSize: '11.5px', fontWeight: 750, marginBottom: '12px' }}>
-                    <span style={{ color: 'var(--text-primary)', backgroundColor: '#ffffff', border: '1px solid var(--border-subtle)', padding: '3px 8px', borderRadius: '4px' }}>IDEA</span>
-                    <span style={{ color: 'var(--text-muted)' }}>→</span>
-                    <span style={{ color: 'var(--brand-primary)', backgroundColor: 'var(--brand-primary-subtle)', padding: '3px 8px', borderRadius: '4px' }}>AI GENERATION</span>
-                    <span style={{ color: 'var(--text-muted)' }}>→</span>
-                    <span style={{ color: 'var(--brand-primary)', backgroundColor: 'var(--brand-primary-subtle)', padding: '3px 8px', borderRadius: '4px' }}>REAL FOOTAGE</span>
-                    <span style={{ color: 'var(--text-muted)' }}>→</span>
-                    <span style={{ color: 'var(--text-primary)', backgroundColor: '#ffffff', border: '1px solid var(--border-subtle)', padding: '3px 8px', borderRadius: '4px' }}>EDITING</span>
-                    <span style={{ color: 'var(--text-muted)' }}>→</span>
-                    <span style={{ color: 'var(--brand-accent)', backgroundColor: 'rgba(88, 204, 2, 0.1)', padding: '3px 8px', borderRadius: '4px' }}>FINAL VIDEO</span>
-                  </div>
-                  <div style={{ fontSize: '12.5px', color: 'var(--text-secondary)', fontStyle: 'italic' }}>
-                    "Experimented with combining AI-generated elements and real footage into a promotional piece for Computational Thinking."
-                  </div>
-                </div>
-              )}
-
-              {/* Question 3 & 4: WHAT EXISTS NOW (OUTPUT) & RESULT (EVIDENCE) */}
-              <div
+              {/* Context Summary */}
+              <p
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(2, 1fr)',
-                  gap: '12px',
-                  marginBottom: '24px'
+                  fontSize: '13.5px',
+                  color: 'var(--text-secondary)',
+                  lineHeight: 1.55,
+                  margin: '0 0 16px 0'
                 }}
               >
-                <div
-                  style={{
-                    padding: '14px 16px',
-                    backgroundColor: '#f8fafc',
-                    borderRadius: 'var(--radius-md)',
-                    border: '1px solid var(--border-subtle)'
-                  }}
-                >
-                  <div style={{ fontSize: '11px', fontWeight: 750, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '4px' }}>
-                    03 • WHAT EXISTS NOW (OUTPUT)
-                  </div>
-                  <div style={{ fontSize: '13.5px', color: 'var(--text-primary)', fontWeight: 650, lineHeight: 1.45 }}>
-                    {activeProject.whatExistsNow}
-                  </div>
-                </div>
+                {activeProject.whyContext} {activeProject.myContribution}
+              </p>
 
+              {/* Key Deliverables & Architecture */}
+              <div style={{ marginBottom: '16px' }}>
                 <div
                   style={{
-                    padding: '14px 16px',
-                    backgroundColor: '#f8fafc',
-                    borderRadius: 'var(--radius-md)',
-                    border: '1px solid var(--border-subtle)'
+                    fontSize: '10.5px',
+                    fontWeight: 800,
+                    color: 'var(--brand-primary)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    marginBottom: '8px'
                   }}
                 >
-                  <div style={{ fontSize: '11px', fontWeight: 750, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '4px' }}>
-                    04 • EVIDENCE & STATUS
-                  </div>
-                  <div style={{ fontSize: '13.5px', color: 'var(--text-primary)', fontWeight: 650, lineHeight: 1.45 }}>
-                    Status: {activeProject.status} • {activeProject.isInternal ? 'Internal system record' : 'Live production site'}
-                  </div>
+                  KEY HIGHLIGHTS & ARCHITECTURE
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '7px' }}>
+                  {activeProject.highlights.map((hl, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        fontSize: '12.5px',
+                        color: 'var(--text-secondary)',
+                        lineHeight: 1.45,
+                        display: 'flex',
+                        alignItems: 'baseline',
+                        gap: '6px'
+                      }}
+                    >
+                      <span style={{ color: 'var(--brand-accent)', fontWeight: 800, fontSize: '14px', lineHeight: 1 }}>•</span>
+                      <div>
+                        <strong style={{ color: 'var(--text-primary)', fontWeight: 750 }}>{hl.label}: </strong>
+                        <span>{hl.text}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Expand Toggle for Deep Case Study */}
+              {/* Compact Output Banner */}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '9px 12px',
+                  backgroundColor: '#f8fafc',
+                  border: '1px solid var(--border-subtle)',
+                  borderRadius: 'var(--radius-sm)',
+                  fontSize: '12px',
+                  color: 'var(--text-secondary)',
+                  lineHeight: 1.4,
+                  marginBottom: '16px'
+                }}
+              >
+                <CheckCircle2 size={15} color="var(--brand-accent)" style={{ flexShrink: 0 }} />
+                <span>
+                  <strong style={{ color: 'var(--text-primary)', fontWeight: 700 }}>Output: </strong>
+                  {activeProject.whatExistsNow}
+                </span>
+              </div>
+
+              {/* Expand Toggle */}
               <button
                 onClick={toggleExpand}
                 style={{
@@ -781,45 +556,45 @@ export const FlagshipProjects: React.FC = () => {
                   border: 'none',
                   color: 'var(--brand-primary)',
                   fontWeight: 750,
-                  fontSize: '14px',
+                  fontSize: '13px',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '6px',
+                  gap: '5px',
                   cursor: 'pointer',
                   padding: 0
                 }}
               >
-                <span>{isExpanded ? 'Hide case study details' : 'Read full case study details'}</span>
-                {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                <span>{isExpanded ? 'Hide deep technical details' : 'Read full technical details'}</span>
+                {isExpanded ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
               </button>
 
-              {/* Symmetrical 2-Column Expanded Case Study Details */}
+              {/* Expanded Deep Case Study Details */}
               {isExpanded && (
                 <div
                   style={{
-                    marginTop: '24px',
-                    paddingTop: '24px',
+                    marginTop: '18px',
+                    paddingTop: '18px',
                     borderTop: '1px dashed var(--border-subtle)',
                     display: 'grid',
                     gridTemplateColumns: 'repeat(12, 1fr)',
-                    gap: '20px'
+                    gap: '16px'
                   }}
                 >
                   <div style={{ gridColumn: 'span 12' }} className="deep-col-half">
                     <span
                       style={{
-                        fontSize: '11px',
+                        fontSize: '10.5px',
                         fontWeight: 750,
                         color: 'var(--text-muted)',
                         textTransform: 'uppercase',
                         letterSpacing: '0.08em',
                         display: 'block',
-                        marginBottom: '6px'
+                        marginBottom: '4px'
                       }}
                     >
                       THE PROBLEM
                     </span>
-                    <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    <p style={{ fontSize: '12.5px', color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
                       {activeProject.problem}
                     </p>
                   </div>
@@ -827,18 +602,18 @@ export const FlagshipProjects: React.FC = () => {
                   <div style={{ gridColumn: 'span 12' }} className="deep-col-half">
                     <span
                       style={{
-                        fontSize: '11px',
+                        fontSize: '10.5px',
                         fontWeight: 750,
                         color: 'var(--text-muted)',
                         textTransform: 'uppercase',
                         letterSpacing: '0.08em',
                         display: 'block',
-                        marginBottom: '6px'
+                        marginBottom: '4px'
                       }}
                     >
                       KEY LEARNING
                     </span>
-                    <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.55, margin: 0 }}>
+                    <p style={{ fontSize: '12.5px', color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
                       {activeProject.learning}
                     </p>
                   </div>
@@ -846,36 +621,13 @@ export const FlagshipProjects: React.FC = () => {
                   <div style={{ gridColumn: 'span 12' }}>
                     <span
                       style={{
-                        fontSize: '11px',
+                        fontSize: '10.5px',
                         fontWeight: 750,
                         color: 'var(--text-muted)',
                         textTransform: 'uppercase',
                         letterSpacing: '0.08em',
                         display: 'block',
-                        marginBottom: '8px'
-                      }}
-                    >
-                      DETAILED STEPS
-                    </span>
-                    <ul style={{ paddingLeft: '20px', margin: 0 }}>
-                      {activeProject.whatIDid.map((step, sIdx) => (
-                        <li key={sIdx} style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '5px', lineHeight: 1.5 }}>
-                          {step}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div style={{ gridColumn: 'span 12' }}>
-                    <span
-                      style={{
-                        fontSize: '11px',
-                        fontWeight: 750,
-                        color: 'var(--text-muted)',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.08em',
-                        display: 'block',
-                        marginBottom: '8px'
+                        marginBottom: '6px'
                       }}
                     >
                       TOOLS & TECHNOLOGIES
@@ -885,11 +637,11 @@ export const FlagshipProjects: React.FC = () => {
                         <span
                           key={tIdx}
                           style={{
-                            fontSize: '11.5px',
+                            fontSize: '11px',
                             fontWeight: 650,
                             backgroundColor: 'var(--bg-subtle)',
                             color: 'var(--text-secondary)',
-                            padding: '4px 9px',
+                            padding: '3px 8px',
                             borderRadius: 'var(--radius-sm)'
                           }}
                         >
@@ -901,6 +653,7 @@ export const FlagshipProjects: React.FC = () => {
                 </div>
               )}
             </div>
+
 
             {/* Right Column: Visual Evidence (Embedded Video or Screenshot) */}
             <div style={{ gridColumn: 'span 12' }} className="case-study-visual-col">
@@ -1055,8 +808,8 @@ export const FlagshipProjects: React.FC = () => {
 
       <style>{`
         @media (min-width: 960px) {
-          .case-study-content-col { grid-column: span 7 !important; }
-          .case-study-visual-col { grid-column: span 5 !important; }
+          .case-study-content-col { grid-column: span 6 !important; }
+          .case-study-visual-col { grid-column: span 6 !important; }
           .deep-col-half { grid-column: span 6 !important; }
         }
       `}</style>
