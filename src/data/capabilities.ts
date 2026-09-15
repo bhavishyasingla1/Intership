@@ -63,6 +63,6 @@ export const capabilities: CapabilityCard[] = [
     title: 'Multi-Channel Brand Growth',
     description: 'Scaled organic channel footprints across LinkedIn (1.6K+), YouTube (1.35K+), and local Google presence.',
     iconName: 'TrendingUp',
-    skills: ['Zoho Social Analytics', 'B2B Founder Presence', 'GMB Verification', 'Community Distribution']
+    skills: ['Zoho Social Analytics', 'LinkedIn Profile Management', 'GMB Verification', 'Community Distribution']
   }
 ];

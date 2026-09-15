@@ -110,7 +110,7 @@ export const NextChapter: React.FC = () => {
             ))}
           </div>
 
-          {/* Founder Contact & Career Positioning Bar */}
+          {/* Contact & Career Positioning Bar */}
           <div
             style={{
               display: 'flex',

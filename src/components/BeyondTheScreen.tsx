@@ -206,7 +206,7 @@ export const BeyondTheScreen: React.FC = () => {
                   borderBottom: '1px solid rgba(100, 22, 184, 0.3)'
                 }}
               >
-                Nitish (Co-founder)
+                Nitish
               </a>{' '}
               and the Codju team throughout the internship.
             </div>

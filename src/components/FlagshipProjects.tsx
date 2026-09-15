@@ -424,7 +424,7 @@ export const FlagshipProjects: React.FC = () => {
               alignItems: 'start'
             }}
           >
-            {/* Left Column: The 4 Founder Questions (Context → Action → Output → Evidence) */}
+            {/* Left Column: The 4 Core Project Questions (Context → Action → Output → Evidence) */}
             <div style={{ gridColumn: 'span 12' }} className="case-study-content-col">
               {/* Question 1: WHY (CONTEXT) */}
               <div style={{ marginBottom: '20px' }}>

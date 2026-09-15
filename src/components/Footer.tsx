@@ -318,7 +318,7 @@ export const Footer: React.FC = () => {
               ))}
             </ul>
 
-            {/* Co-founder Nitish Profile Link Card */}
+            {/* Nitish Profile Link Card */}
             <a
               href="https://www.linkedin.com/in/nitishcodju/?skipRedirect=true"
               target="_blank"
@@ -345,10 +345,10 @@ export const Footer: React.FC = () => {
             >
               <div>
                 <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#f8fafc' }}>
-                  Nitish (Co-founder)
+                  Nitish
                 </div>
                 <div style={{ fontSize: '11px', color: '#c084fc' }}>
-                  Mentorship & Direction • LinkedIn Profile
+                  Managed LinkedIn Profile
                 </div>
               </div>
               <ArrowUpRight size={13} color="#c084fc" />
