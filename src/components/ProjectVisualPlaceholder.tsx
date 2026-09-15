@@ -332,13 +332,93 @@ export interface TeamPhotoPlaceholderProps {
   title: string;
   note?: string;
   aspectRatio?: string;
+  imageSrc?: string;
+  objectPosition?: string;
+  onClick?: () => void;
 }
 
 export const TeamPhotoPlaceholder: React.FC<TeamPhotoPlaceholderProps> = ({
   title,
   note = 'Photo to be added',
-  aspectRatio = '16/10'
+  aspectRatio = '16/10',
+  imageSrc,
+  objectPosition = 'center center',
+  onClick
 }) => {
+  const [hasError, setHasError] = React.useState(false);
+
+  if (imageSrc && !hasError) {
+    return (
+      <div
+        onClick={onClick}
+        style={{
+          position: 'relative',
+          width: '100%',
+          aspectRatio,
+          backgroundColor: '#0f172a',
+          border: '1px solid var(--border-subtle)',
+          borderRadius: 'var(--radius-lg)',
+          overflow: 'hidden',
+          boxShadow: '0 4px 16px -2px rgba(0, 0, 0, 0.08)',
+          cursor: onClick ? 'pointer' : 'default',
+          transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+        }}
+        className="team-photo-card"
+      >
+        <img
+          src={imageSrc}
+          alt={title}
+          onError={() => setHasError(true)}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition,
+            display: 'block',
+            transition: 'transform 0.35s ease'
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(to top, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.25) 50%, rgba(15, 23, 42, 0) 100%)',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+            padding: '16px 20px',
+            pointerEvents: 'none'
+          }}
+        >
+          <div
+            style={{
+              fontSize: '11px',
+              fontWeight: 800,
+              color: 'var(--brand-accent)',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              marginBottom: '3px'
+            }}
+          >
+            {title}
+          </div>
+          {note && (
+            <div
+              style={{
+                fontSize: '13px',
+                fontWeight: 600,
+                color: '#f8fafc',
+                lineHeight: 1.35
+              }}
+            >
+              {note}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       style={{
@@ -377,3 +457,4 @@ export const TeamPhotoPlaceholder: React.FC<TeamPhotoPlaceholderProps> = ({
     </div>
   );
 };
+
