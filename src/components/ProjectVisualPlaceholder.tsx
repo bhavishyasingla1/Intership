@@ -26,6 +26,10 @@ export const ProjectVisualPlaceholder: React.FC<ProjectVisualPlaceholderProps> =
 }) => {
   const [hasError, setHasError] = React.useState(false);
 
+  React.useEffect(() => {
+    setHasError(false);
+  }, [imageSrc]);
+
   if (imageSrc && !hasError) {
     return (
       <div
@@ -46,8 +50,11 @@ export const ProjectVisualPlaceholder: React.FC<ProjectVisualPlaceholderProps> =
         }}
       >
         <img
+          key={imageSrc}
           src={imageSrc}
           alt={projectName}
+          loading="eager"
+          decoding="async"
           onError={() => setHasError(true)}
           style={{
             width: '100%',

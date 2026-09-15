@@ -211,6 +211,27 @@ export const FlagshipProjects: React.FC = () => {
   const [selectedVideoId, setSelectedVideoId] = useState<string>('dP5Cmo3I1ko');
   const [campaignVisual, setCampaignVisual] = useState<'summer-camp' | 'ct-ai'>('summer-camp');
 
+  // Preload and decode all project images in memory so switching tabs is instantaneous
+  React.useEffect(() => {
+    const imagesToPreload = [
+      './pics/codju.com.png',
+      './pics/whatsapp.png',
+      './pics/content.png',
+      './pics/teachboost.png',
+      './pics/summer camp.png',
+      './pics/ct-ai.png',
+      './pics/blogs.png',
+      './pics/bhavishya-profile.png'
+    ];
+    imagesToPreload.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      if ('decode' in img) {
+        img.decode().catch(() => {});
+      }
+    });
+  }, []);
+
   const activeProject = flagshipData.find((p) => p.id === activeId) || flagshipData[0];
   const isExpanded = expandedId === activeProject.id;
 
@@ -975,6 +996,7 @@ export const FlagshipProjects: React.FC = () => {
               ) : activeProject.id === 'campaign-landing' ? (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <ProjectVisualPlaceholder
+                    key={`campaign-${campaignVisual}`}
                     imageSrc={campaignVisual === 'summer-camp' ? './pics/summer camp.png' : './pics/ct-ai.png'}
                     projectName={campaignVisual === 'summer-camp' ? 'Codju Summer Camp Landing Page' : 'Computational Thinking Landing Experience'}
                     label="CAMPAIGN VISUAL EVIDENCE"
@@ -1017,6 +1039,7 @@ export const FlagshipProjects: React.FC = () => {
                 </div>
               ) : (
                 <ProjectVisualPlaceholder
+                  key={activeProject.id}
                   imageSrc={activeProject.imageSrc}
                   projectName={activeProject.title}
                   label="PRODUCTION EVIDENCE"
