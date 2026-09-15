@@ -1,6 +1,5 @@
 import React from 'react';
 import { ArrowRight, Layers } from 'lucide-react';
-import { ProjectVisualPlaceholder } from './ProjectVisualPlaceholder';
 
 export const Hero: React.FC = () => {
   return (
@@ -137,16 +136,32 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Exactly One Visual Placeholder */}
+          {/* Right Column: Clean Hero Image without overlay box */}
           <div style={{ gridColumn: 'span 12' }} className="hero-visual-col">
-            <ProjectVisualPlaceholder
-              imageSrc="./pics/codju.com.png"
-              label="PRODUCTION PLATFORM"
-              projectName="Codju Web & Digital Ecosystem"
-              optionalNote="codju.com production release"
-              aspectRatio="16/11"
-              minHeight="280px"
-            />
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                backgroundColor: 'transparent',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              <img
+                src="./pics/hero-image.png"
+                alt="Nine months of building at Codju"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxHeight: '480px',
+                  objectFit: 'contain',
+                  display: 'block'
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

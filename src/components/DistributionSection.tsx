@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Check, ExternalLink } from 'lucide-react';
+import { MapPin, ExternalLink } from 'lucide-react';
 
 const YoutubeIcon = ({ size = 20 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -70,15 +70,6 @@ export const DistributionSection: React.FC = () => {
       buttonLabel: 'Google Profile',
       url: 'https://share.google/74j2gsdUwcflPEkmp'
     }
-  ];
-
-  const officialChannels = [
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/codjutech/posts/?feedView=all' },
-    { name: 'YouTube', url: 'https://www.youtube.com/@codjutech/videos' },
-    { name: 'Google Business', url: 'https://share.google/74j2gsdUwcflPEkmp' },
-    { name: 'Instagram', url: 'https://www.instagram.com/codjutech/' },
-    { name: 'X / Twitter', url: 'https://x.com/Codjutech' },
-    { name: 'Facebook', url: 'https://www.facebook.com/people/Codju/61590299614330/?sk=directory_activites' }
   ];
 
   return (
@@ -326,156 +317,6 @@ export const DistributionSection: React.FC = () => {
           })}
         </div>
 
-        {/* Symmetrical Brand Consistency Container */}
-        <div
-          style={{
-            backgroundColor: '#ffffff',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 'var(--radius-lg)',
-            padding: '22px 24px',
-            marginBottom: '24px',
-            boxShadow: '0 2px 6px -2px rgba(0,0,0,0.03)'
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexWrap: 'wrap',
-              gap: '12px',
-              marginBottom: '16px',
-              borderBottom: '1px solid var(--border-subtle)',
-              paddingBottom: '14px'
-            }}
-          >
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '3px' }}>
-                <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--brand-accent)' }} />
-                <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--brand-primary)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  BRAND CONSISTENCY
-                </div>
-              </div>
-              <h3 style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text-primary)', margin: 0 }}>
-                Unified presence across official channels
-              </h3>
-            </div>
-            <p style={{ fontSize: '12.5px', color: 'var(--text-secondary)', margin: 0, maxWidth: '440px', lineHeight: 1.45 }}>
-              Standardized typography, visual tone, and verified profiles across all public platforms.
-            </p>
-          </div>
-
-          {/* Symmetrical 6-Column Channels Grid */}
-          <div className="channels-symmetric-grid">
-            {officialChannels.map((ch) => (
-              <a
-                key={ch.name}
-                href={ch.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="channel-grid-item"
-                style={{
-                  fontSize: '12px',
-                  fontWeight: 750,
-                  color: 'var(--text-primary)',
-                  backgroundColor: '#f8fafc',
-                  padding: '9px 12px',
-                  borderRadius: 'var(--radius-sm)',
-                  border: '1px solid var(--border-subtle)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '6px',
-                  textDecoration: 'none',
-                  transition: 'all 0.15s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--brand-primary)';
-                  e.currentTarget.style.backgroundColor = '#ffffff';
-                  e.currentTarget.style.boxShadow = '0 2px 8px -2px rgba(100, 22, 184, 0.12)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--border-subtle)';
-                  e.currentTarget.style.backgroundColor = '#f8fafc';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <Check size={13} color="var(--brand-accent)" strokeWidth={2.5} style={{ flexShrink: 0 }} />
-                  <span>{ch.name}</span>
-                </div>
-                <ExternalLink size={11} color="var(--text-muted)" style={{ flexShrink: 0 }} />
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Symmetrical Narrative Evolution Banner */}
-        <div
-          style={{
-            backgroundColor: '#ffffff',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 'var(--radius-lg)',
-            padding: '18px 24px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '14px',
-            boxShadow: '0 2px 6px -2px rgba(0,0,0,0.03)'
-          }}
-        >
-          <div>
-            <div
-              style={{
-                fontSize: '11px',
-                fontWeight: 800,
-                color: 'var(--brand-primary)',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                marginBottom: '3px'
-              }}
-            >
-              NARRATIVE EVOLUTION
-            </div>
-            <div style={{ fontSize: '14px', fontWeight: 750, color: 'var(--text-primary)', lineHeight: 1.4 }}>
-              “Once the channels were in place, the next question was what sat behind them.”
-            </div>
-          </div>
-
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              flexWrap: 'wrap'
-            }}
-          >
-            {['CONTENT', 'WEB INFRASTRUCTURE', 'INTERNAL SYSTEMS', 'MEASUREMENT'].map((step, idx, arr) => (
-              <React.Fragment key={step}>
-                <span
-                  style={{
-                    padding: '5px 12px',
-                    borderRadius: 'var(--radius-sm)',
-                    fontSize: '11px',
-                    fontWeight: 800,
-                    letterSpacing: '0.04em',
-                    backgroundColor: 'var(--brand-primary-subtle)',
-                    color: 'var(--brand-primary)',
-                    border: '1px solid rgba(100, 22, 184, 0.16)'
-                  }}
-                >
-                  {step}
-                </span>
-                {idx < arr.length - 1 && (
-                  <span style={{ fontSize: '11.5px', color: 'var(--text-muted)', fontWeight: 700 }}>
-                    →
-                  </span>
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
       </div>
 
       <style>{`

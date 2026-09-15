@@ -86,7 +86,6 @@ export const projectsData: Project[] = [
     learning: 'Creative output scales only when backed by operational systems. Systematizing the calendar removed daily friction about what to write next.',
     tools: ['Cloudflare Workers', 'TypeScript', 'Modern CSS', 'Content Schemas'],
     transferableSkills: ['Content Operations', 'Workflow Design', 'Editorial Planning', 'Tool Design'],
-    liveUrl: 'https://codju-content.bhavishyasingla2005.workers.dev',
     isFlagship: true,
     priority: 5,
     evidence: []

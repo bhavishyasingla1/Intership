@@ -241,24 +241,66 @@ button, input, select, textarea {
   border-radius: var(--radius-lg);
   padding: 28px;
   box-shadow: var(--shadow-sm);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover {
   border-color: rgba(100, 22, 184, 0.25);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
 }
 
-/* Responsive Overrides */
+/* Animations & Micro-Interactions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Interactive Image & Card Micro-animations */
+img {
+  max-width: 100%;
+}
+
+.project-visual-placeholder {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-visual-placeholder:hover {
+  box-shadow: 0 8px 30px -4px rgba(15, 23, 42, 0.12);
+}
+
+/* Responsive Overrides & Mobile Polish */
 @media (max-width: 768px) {
   .section {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .card {
-    padding: 20px;
+    padding: 18px;
   }
   .section-title {
-    font-size: 28px;
+    font-size: 26px;
+  }
+  .section-subtitle {
+    font-size: 15px;
+  }
+  .btn {
+    padding: 10px 18px;
+    font-size: 14px;
+    width: 100%;
   }
 }

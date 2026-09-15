@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, MapPin, Mail, ShieldCheck } from 'lucide-react';
+import { Users, MapPin, Mail } from 'lucide-react';
 
 const YoutubeIcon: React.FC<{ size?: number }> = ({ size = 16 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -272,31 +272,6 @@ export const MetricsSection: React.FC = () => {
           })}
         </div>
 
-        {/* Audit Documentation Note */}
-        <div
-          style={{
-            maxWidth: '820px',
-            margin: '0 auto',
-            backgroundColor: '#f8fafc',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 'var(--radius-lg)',
-            padding: '16px 20px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '12px',
-            fontSize: '13px',
-            color: 'var(--text-secondary)',
-            lineHeight: 1.5,
-            textAlign: 'center'
-          }}
-        >
-          <ShieldCheck size={18} color="var(--brand-accent)" style={{ flexShrink: 0 }} />
-          <div>
-            <strong style={{ color: 'var(--text-primary)', fontWeight: 750 }}>Audit Note: </strong>
-            Metrics reflect verified platform analytics for documented periods, representing recorded channel data.
-          </div>
-        </div>
       </div>
 
       <style>{`

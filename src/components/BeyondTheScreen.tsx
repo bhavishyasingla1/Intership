@@ -1,6 +1,5 @@
 import React from 'react';
-import { X, ZoomIn } from 'lucide-react';
-import { PersonalPhotoPlaceholder, TeamPhotoPlaceholder } from './ProjectVisualPlaceholder';
+import { ZoomIn, X } from 'lucide-react';
 
 export const BeyondTheScreen: React.FC = () => {
   const [activePhoto, setActivePhoto] = React.useState<{
@@ -48,22 +47,34 @@ export const BeyondTheScreen: React.FC = () => {
             marginBottom: '40px'
           }}
         >
-          {/* Left Column: Authentic Bhavishya Singla Portrait Placeholder */}
+          {/* Left Column: Authentic Bhavishya Singla Avatar */}
           <div style={{ gridColumn: 'span 12' }} className="bts-photo-col">
-            <PersonalPhotoPlaceholder
-              imageSrc="./pics/bhavishya-profile.png"
-              label="BHAVISHYA SINGLA"
-              sublabel="Growth & Systems Intern • Codju Technologies"
-              aspectRatio="4/5"
-              minHeight="320px"
-            />
-            <div style={{ marginTop: '14px', textAlign: 'center' }}>
-              <div style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text-primary)' }}>
-                Bhavishya Singla
-              </div>
-              <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-                Growth & Systems Intern • Codju Technologies
-              </div>
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+                aspectRatio: '4/5',
+                minHeight: '320px',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                backgroundColor: '#ffffff',
+                border: '1px solid var(--border-subtle)',
+                boxShadow: 'var(--shadow-card)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              <img
+                src="./pics/human-design.png"
+                alt="Bhavishya Singla"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+              />
             </div>
           </div>
 
@@ -143,58 +154,89 @@ export const BeyondTheScreen: React.FC = () => {
 
           <div
             style={{
+              maxWidth: '720px',
+              margin: '0 auto',
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '20px'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: '16px'
             }}
           >
-            <TeamPhotoPlaceholder
-              title="CODJU TEAM GATHERING"
-              note="Codju team dinner and milestone celebration"
-              aspectRatio="16/11"
-              imageSrc="./pics/team-moment-1.jpg"
-              objectPosition="center 26%"
+            <div
               onClick={() => setActivePhoto({
                 src: './pics/team-moment-1.jpg',
-                title: 'Codju Team Gathering',
-                note: 'Codju team dinner and milestone celebration'
+                title: 'Codju Team Gathering'
               })}
-            />
-            <TeamPhotoPlaceholder
-              title="WORKING & BUILDING TOGETHER"
-              note="Team collaboration, offsites, and daily momentum"
-              aspectRatio="16/11"
-              imageSrc="./pics/team-moment-2.jpg"
-              objectPosition="center 42%"
+              style={{
+                position: 'relative',
+                width: '100%',
+                aspectRatio: '16/11',
+                backgroundColor: '#ffffff',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: 'var(--radius-md)',
+                overflow: 'hidden',
+                boxShadow: '0 2px 10px -2px rgba(0, 0, 0, 0.06)',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 6px 16px -2px rgba(0,0,0,0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 2px 10px -2px rgba(0,0,0,0.06)';
+              }}
+            >
+              <img
+                src="./pics/team-moment-1.jpg"
+                alt="Codju Team Gathering"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center 26%',
+                  display: 'block'
+                }}
+              />
+            </div>
+            <div
               onClick={() => setActivePhoto({
                 src: './pics/team-moment-2.jpg',
-                title: 'Working & Building Together',
-                note: 'Team collaboration, offsites, and daily momentum'
+                title: 'Working & Building Together'
               })}
-            />
-          </div>
-        </div>
-
-        {/* Team Acknowledgement */}
-        <div
-          style={{
-            maxWidth: '820px',
-            margin: '0 auto',
-            backgroundColor: '#f8fafc',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 'var(--radius-md)',
-            padding: '20px 24px',
-            fontSize: '13.5px',
-            color: 'var(--text-secondary)',
-            lineHeight: 1.6,
-            textAlign: 'center'
-          }}
-        >
-          <div style={{ fontWeight: 700, color: 'var(--text-primary)', marginBottom: '4px' }}>
-            Built with guidance, feedback, and collaboration from the Codju team and mentors throughout the internship.
-          </div>
-          <div>
-            Grateful to everyone who reviewed the work, challenged my thinking, and helped me improve it.
+              style={{
+                position: 'relative',
+                width: '100%',
+                aspectRatio: '16/11',
+                backgroundColor: '#ffffff',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: 'var(--radius-md)',
+                overflow: 'hidden',
+                boxShadow: '0 2px 10px -2px rgba(0, 0, 0, 0.06)',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 6px 16px -2px rgba(0,0,0,0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 2px 10px -2px rgba(0,0,0,0.06)';
+              }}
+            >
+              <img
+                src="./pics/team-moment-2.jpg"
+                alt="Working & Building Together"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center 42%',
+                  display: 'block'
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

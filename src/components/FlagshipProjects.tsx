@@ -69,7 +69,6 @@ const flagshipData: FlagshipDefinition[] = [
     whatExistsNow: 'An internal marketing operations system handling contacts, audiences, broadcasts, and campaigns.',
     status: 'BUILT',
     isInternal: true,
-    liveUrl: 'https://whatsapp-dashboard.codju-tech25.workers.dev/',
     imageSrc: './pics/whatsapp.png',
     problem: 'Managing outbound school outreach through scattered spreadsheets and individual devices caused fragmented tracking and lacked audience segmentation.',
     whatIDid: [
@@ -99,7 +98,6 @@ const flagshipData: FlagshipDefinition[] = [
     whatExistsNow: 'A centralized internal workspace structuring the entire content lifecycle across social posts, blogs, and newsletters.',
     status: 'BUILT',
     isInternal: true,
-    liveUrl: 'https://codju-content.bhavishyasingla2005.workers.dev/',
     imageSrc: './pics/content.png',
     problem: 'Balancing social posts, educational newsletters, and SEO blog articles across multiple platforms without a single source of truth created review delays and irregular publishing rhythms.',
     whatIDid: [

@@ -49,56 +49,39 @@ export const ProjectVisualPlaceholder: React.FC<ProjectVisualPlaceholderProps> =
           ...style
         }}
       >
-        <img
-          key={imageSrc}
-          src={imageSrc}
-          alt={projectName}
-          loading="eager"
-          decoding="async"
-          onError={() => setHasError(true)}
+        <div
           style={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
-            display: 'block',
-            transition: 'transform 0.3s ease'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'scale(1.02)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'scale(1)';
-          }}
-        />
-
-        {/* Subtle Bottom Meta Banner */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            right: 0,
-            padding: '10px 16px',
-            background: 'linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0) 100%)',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between',
-            pointerEvents: 'none'
+            justifyContent: 'center',
+            backgroundColor: '#0f172a',
+            padding: '8px'
           }}
         >
-          <div>
-            <div style={{ fontSize: '10px', fontWeight: 750, color: 'var(--brand-accent)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              {label}
-            </div>
-            <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#ffffff', textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>
-              {projectName}
-            </div>
-          </div>
-          {optionalNote && (
-            <div style={{ fontSize: '11px', color: '#cbd5e1', textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>
-              {optionalNote}
-            </div>
-          )}
+          <img
+            key={imageSrc}
+            src={imageSrc}
+            alt={projectName}
+            loading="eager"
+            decoding="async"
+            onError={() => setHasError(true)}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              display: 'block',
+              borderRadius: '6px',
+              transition: 'transform 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.02)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
+          />
         </div>
       </div>
     );
